@@ -1,10 +1,10 @@
 {
   "name": "pinchcss",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Pinchcss micro css framework",
   "author": "Eugene Tereshchenko <i@jman.info>",
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "HOST=0.0.0.0 webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build_doc": "node build/build_doc.js",

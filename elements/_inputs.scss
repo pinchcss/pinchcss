@@ -48,8 +48,10 @@ $style-select: true !default;
 
       $knob-width: em(9);
       $knob-height: em(12);
+      $knob-color: str-replace(#{$body-color},'#','%23');
+      $knob: '<svg xmlns="http://www.w3.org/2000/svg" width="#{$knob-width}" height="#{$knob-height}" viewBox="0 0 9 12"><path fill="#{$knob-color}" d="M0.722,4.823L-0.01,4.1,4.134-.01,4.866,0.716Zm7.555,0L9.01,4.1,4.866-.01l-0.732.726ZM0.722,7.177L-0.01,7.9,4.134,12.01l0.732-.726Zm7.555,0L9.01,7.9,4.866,12.01l-0.732-.726Z"/></svg>';
       padding-right: em(24) + $knob-width;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="#{$knob-width}" height="#{$knob-height}" viewBox="0 0 9 12"><path fill="#{$body-color}" d="M0.722,4.823L-0.01,4.1,4.134-.01,4.866,0.716Zm7.555,0L9.01,4.1,4.866-.01l-0.732.726ZM0.722,7.177L-0.01,7.9,4.134,12.01l0.732-.726Zm7.555,0L9.01,7.9,4.866,12.01l-0.732-.726Z"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,#{$knob}');
       background-repeat: no-repeat;
       background-position: right em(12) center;
     }

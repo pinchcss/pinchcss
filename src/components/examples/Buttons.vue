@@ -48,7 +48,19 @@
     <p style="background: #1e1b1e; padding: 2em;">
       <button class="inverted">Inverted</button>
       <button class="inverted outlined">Outlined</button>
+      <a class="button inverted" href="#">Inverted</a>
+      <a class="button inverted outlined" href="#">Outlined</a>
     </p>
+
+    <p>
+      <a class="button outlined" href="#">Outlined</a>
+      <a class="button secondary outlined" href="#" disabled>Secondary</a>
+      <a class="button info" href="#">Info</a>
+      <a class="button success" href="#">Success</a>
+      <a class="button warning" href="#" disabled>Warninig</a>
+      <a class="button danger outlined" href="#">Danger</a>
+    </p>
+
   </section>
 </template>
 
