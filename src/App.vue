@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <header>
+      Pinch Css Framework
+    </header>
     <router-view/>
   </div>
 </template>
@@ -12,4 +15,14 @@ export default {
 
 <style lang="scss">
   @import "../pinch.scss";
+
+  #app {
+    @extend %container;
+  }
+  header {
+    @extend %container-invert;
+  }
+  .field {
+    @extend %field;
+  }
 </style>

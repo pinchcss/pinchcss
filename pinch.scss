@@ -17,15 +17,3 @@
 @include buttons();
 @include fieldset();
 @include inputs();
-
-#app {
-  @extend %container;
-}
-
-header {
-  @extend %container-invert;
-}
-
-.field {
-  @extend %field;
-}
