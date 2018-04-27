@@ -1,0 +1,18 @@
+@mixin container {
+  margin: 0 $gap;
+  @include media(">=md") {
+    margin: 0 $gap-md;
+  }
+}
+
+@mixin container-invert {
+  margin: 0 (-$gap);
+  padding: 0 $gap;
+  @include media(">=md") {
+    padding: 0 $gap-md;
+    margin: 0 (-$gap-md);
+  }
+}
+
+%container { @include container; }
+%container-invert { @include container-invert;}

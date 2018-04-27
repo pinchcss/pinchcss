@@ -1,0 +1,18 @@
+@mixin hover (){
+  &:active {
+    @content;
+  }
+  @include media('no-touch') {
+    &:focus,
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin focus (){
+  &:focus {
+    outline: none;
+    @content;
+  }
+}

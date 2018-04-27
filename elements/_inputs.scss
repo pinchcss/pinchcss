@@ -1,0 +1,57 @@
+$style-select: true !default;
+
+@mixin input {
+  box-sizing: border-box;
+  min-height: 2.5em;
+  line-height: 1.5;
+  border: $input-border-width $input-border-color solid;
+  border-radius: $border-radius;
+  background: transparent;
+  color: $main-color;
+  transition: all .5s;
+  @include normalize-rhythm(padding, 6px 12px);
+  @include focus {
+    box-shadow: 0 0 5px $input-border-color inset;
+  };
+}
+
+
+%input { @include input; }
+
+
+@mixin inputs {
+  input {
+    &[type=text],
+    &[type=email],
+    &[type=password],
+    &[type=search] {
+      @extend %input;
+    }
+  }
+  textarea {
+    @extend %input;
+    vertical-align: top;
+    max-width: 100%;
+    min-width: 320px;
+  }
+  select {
+    @extend %input;
+    height: 2.5em;
+    @if $style-select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+
+      &::-ms-expand {
+        display: none;
+      }
+
+      $knob-width: 9px;
+      $knob-height: 12px;
+      @include normalize-rhythm(padding-right, 24px + $knob-width);
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="#{normalize-rhythm($knob-width)}" height="#{normalize-rhythm($knob-height)}" viewBox="0 0 9 12"><path fill="#{$main-color}" d="M0.722,4.823L-0.01,4.1,4.134-.01,4.866,0.716Zm7.555,0L9.01,4.1,4.866-.01l-0.732.726ZM0.722,7.177L-0.01,7.9,4.134,12.01l0.732-.726Zm7.555,0L9.01,7.9,4.866,12.01l-0.732-.726Z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right normalize-rhythm(12px) center;
+    }
+  }
+}

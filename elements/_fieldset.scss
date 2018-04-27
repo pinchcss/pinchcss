@@ -1,0 +1,56 @@
+@mixin field {
+  margin: 0 0 1em;
+  label {
+    margin:0 0 .25em;
+    display: block;
+  }
+}
+
+@mixin field-inline {
+  margin: 0 0 1em;
+  display: flex;
+  label {
+    margin:0 .25em 0 0;
+  }
+  input, textarea, select {
+    flex-grow: 1;
+  }
+}
+
+%field { @include field; }
+%field-inline { @include field-inline; }
+
+@mixin fieldset {
+  @if $unstyle-fieldset {
+
+    legend {
+      font-weight: bold;
+      display: block;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0 0 $gap;
+    }
+
+  } @else {
+
+    legend {
+      padding: 0 .25em;
+      margin-left: -.25em;
+      font-weight: bold;
+      display: block;
+    }
+
+    fieldset {
+      border: $border-width $main-color solid;
+      border-radius: $border-radius;
+      padding: $gap * .46 $gap $gap;
+      margin: 0 0 $gap;
+    }
+
+  }
+}

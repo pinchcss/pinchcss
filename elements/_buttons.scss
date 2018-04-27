@@ -1,0 +1,173 @@
+@mixin button {
+  box-sizing: border-box;
+  min-height: 2.5em;
+  line-height: 1.5;
+  border: $border-width transparent solid;
+  border-radius: $border-radius;
+  background: $brand-main;
+  color: $main-bg;
+  cursor: pointer;
+  transition: all .5s;
+  @include normalize-rhythm(padding, 6px 24px);
+  @include focus {}
+  @include hover {
+    &:not([disabled]) {
+      background: darken($brand-main, 15%);
+    }
+  }
+  &[disabled] {
+    opacity: .4;
+    cursor: not-allowed;
+  }
+  &.secondary {
+    background: $secondary;
+    @include hover {
+      &:not([disabled]) {
+        background: darken($secondary, 15%);
+      }
+    }
+  }
+  &.link {
+    padding: 0;
+    min-height: 0;
+    line-height: inherit;
+    background: none !important;
+    @extend %a;
+  }
+
+  @if $output-color-buttons {
+    &.info {
+      background: $info;
+      @include hover {
+        &:not([disabled]) {
+          background: lighten($info, 15%);
+        }
+      }
+    }
+    &.success {
+      background: $success;
+      @include hover {
+        &:not([disabled]) {
+          background: darken($success, 15%);
+        }
+      }
+    }
+    &.warning {
+      background: $warning;
+      @include hover {
+        &:not([disabled]) {
+          background: darken($warning, 15%);
+        }
+      }
+    }
+    &.danger {
+      background: $danger;
+      @include hover {
+        &:not([disabled]) {
+          background: darken($danger, 15%);
+        }
+      }
+    }
+  }
+  &.outlined {
+    background: transparent;
+    border-color: $brand-main;
+    color: $brand-main;
+    @include hover {
+      &:not([disabled]) {
+        background: $brand-main;
+        color: $main-bg;
+      }
+    }
+    &.secondary {
+      background: transparent;
+      border-color: $secondary;
+      color: $secondary;
+      @include hover {
+        &:not([disabled]) {
+          background: $secondary;
+        }
+      }
+    }
+    @if $output-color-buttons {
+      &.info {
+        background: transparent;
+        border-color: $info;
+        color: $info;
+        @include hover {
+          &:not([disabled]) {
+            background: $info;
+          }
+        }
+      }
+      &.success {
+        background: transparent;
+        border-color: $success;
+        color: $success;
+        @include hover {
+          &:not([disabled]) {
+            background: $success;
+          }
+        }
+      }
+      &.warning {
+        background: transparent;
+        border-color: $warning;
+        color: $warning;
+        @include hover {
+          &:not([disabled]) {
+            background: $warning;
+          }
+        }
+      }
+      &.danger {
+        background: transparent;
+        border-color: $danger;
+        color: $danger;
+        @include hover {
+          &:not([disabled]) {
+            background: $danger;
+          }
+        }
+      }
+    }
+  }
+  &.inverted {
+    background: $main-bg;
+    color: $main-color;
+    @include hover {
+      &:not([disabled]) {
+        background: darken($main-bg, 15%);
+      }
+    }
+    &.outlined {
+      background: transparent;
+      color: $main-bg;
+      border-color: $main-bg;
+      @include hover {
+        &:not([disabled]) {
+          background: $main-bg;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+%button { @include button; }
+
+@mixin buttons(){
+  button { @extend %button; }
+  @if $output-button-class {
+    .button { @extend %button; }
+  }
+  @if $output-input-buttons-types {
+    input {
+      &[type=button],
+      &[type=submit],
+      &[type=reset] {
+        @extend %button;
+      }
+    }
+  }
+}
