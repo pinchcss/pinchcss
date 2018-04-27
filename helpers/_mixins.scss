@@ -1,0 +1,41 @@
+@mixin hover ($all-devices: true){
+  @if $all-devices{
+    &:focus,
+    &:hover {
+      outline: 0;
+      @content;
+    }
+  } @else {
+    @include media('no-touch') {
+      &:focus,
+      &:hover {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin focus (){
+  &:focus {
+    outline: 0;
+    @content;
+  }
+}
+
+
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function rem($pixels, $context: $font-base) {
+  @return (strip-unit($pixels)/$context) * 1rem;
+}
+
+@function em($pixels, $context: $font-base) {
+  @return (strip-unit($pixels)/$context) * 1em;
+}

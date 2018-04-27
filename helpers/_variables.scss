@@ -4,23 +4,37 @@ $output-color-buttons: true !default;
 $output-input-buttons-types: true !default; // if you will use input[type=submit]
 $output-button-class: true !default;
 
-$unstyle-fieldset: true !default;
+$unstyle-fieldset: false !default;
 
 $output-input-types: true !default;
 $style-select: true !default;
 
 
-$base-font-size: 16px !default;
-$base-font-family:-apple-system, BlinkMacSystemFont,
-“Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”,
-“Fira Sans”, “Droid Sans”, “Helvetica Neue”,
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+"Fira Sans", "Droid Sans", "Helvetica Neue",
 sans-serif !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco,
+Consolas, "Liberation Mono", "Courier New",
+monospace !default;
+
+$font-base: 16;
+$font-size-base: 1rem !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$line-height-base: 1.5;
+$font-weight-base: 400;
+
+$dt-font-weight: 500;
+
 
 $gap: 1em !default;
 $gap-md: 1.5em !default;
+$headings-margin-bottom: $gap;
+$paragraph-margin-bottom: $gap;
 
-$border-width: normalize-rhythm(2px) !default;
-$border-radius: normalize-rhythm(5px) !default;
+$border-width: 2/$font-base * 1em !default;
+$border-radius: 5/$font-base * 1em !default;
 
 $sm: 30em; //480px
 $md: 48em; //768px
@@ -63,8 +77,10 @@ $color-lightgray: #d4d4d4 !default;
 $color-silver: #e0e1e1 !default;
 $color-aluminum: #f8f8f8 !default;
 
-$link: $brand-main;
-$link-hover: lighten($brand-main, 15%);
+$link-color: $brand-main;
+$link-decoration: underline;
+$link-hover-color: lighten($brand-main, 15%);
+$link-hover-decoration: none;
 
 $secondary: $dark-accent !default;
 $info: $dark-shades !default;
@@ -72,10 +88,17 @@ $success: $color-green !default;
 $warning: $color-yellow !default;
 $danger: $color-red !default;
 
-$main-color: $dark-shades !default;
+$body-color: $dark-shades !default;
 $text-color: lighten($dark-shades, 10%) !default;
-$main-bg: $light-shades !default;
+$body-bg: $light-shades !default;
 
 
 $input-border-color: $dark-accent;
-$input-border-width: normalize-rhythm(2px);
+$input-border-width: $border-width;
+
+
+$table-cell-padding: .75rem !default;
+$table-caption-color: inherit !default;
+
+
+$label-margin-bottom: .25em;

@@ -1,17 +1,1 @@
-body {
-  color: $main-color;
-  background: $main-bg;
-}
 
-
-%a {
-  color: $link;
-  transition: all .5s;
-  text-decoration: underline;
-  @include hover {
-    color: $link-hover;
-    text-decoration: none;
-  }
-}
-
-a { @extend %a; }

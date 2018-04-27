@@ -1,6 +1,6 @@
 {
   "name": "pinchcss",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Pinchcss micro css framework",
   "author": "Eugene Tereshchenko <i@jman.info>",
   "scripts": {
@@ -69,7 +69,6 @@
     "not ie <= 8"
   ],
   "dependencies": {
-    "include-media": "^1.4.9",
-    "normalize-scss": "^7.0.1"
+    "include-media": "^1.4.9"
   }
 }

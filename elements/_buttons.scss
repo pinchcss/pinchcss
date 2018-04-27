@@ -5,27 +5,21 @@
   border: $border-width transparent solid;
   border-radius: $border-radius;
   background: $brand-main;
-  color: $main-bg;
+  color: $body-bg;
   cursor: pointer;
   transition: all .5s;
-  @include normalize-rhythm(padding, 6px 24px);
+  padding: em(6) em(24);
   @include focus {}
   @include hover {
-    &:not([disabled]) {
-      background: darken($brand-main, 15%);
-    }
+    box-shadow: 0 0 99px inset rgba(0,0,0, .30);
   }
   &[disabled] {
     opacity: .4;
     cursor: not-allowed;
+    box-shadow: none !important;
   }
   &.secondary {
     background: $secondary;
-    @include hover {
-      &:not([disabled]) {
-        background: darken($secondary, 15%);
-      }
-    }
   }
   &.link {
     padding: 0;
@@ -39,34 +33,17 @@
     &.info {
       background: $info;
       @include hover {
-        &:not([disabled]) {
-          background: lighten($info, 15%);
-        }
+        box-shadow: 0 0 99px inset rgba(255, 255, 255, .30);
       }
     }
     &.success {
       background: $success;
-      @include hover {
-        &:not([disabled]) {
-          background: darken($success, 15%);
-        }
-      }
     }
     &.warning {
       background: $warning;
-      @include hover {
-        &:not([disabled]) {
-          background: darken($warning, 15%);
-        }
-      }
     }
     &.danger {
       background: $danger;
-      @include hover {
-        &:not([disabled]) {
-          background: darken($danger, 15%);
-        }
-      }
     }
   }
   &.outlined {
@@ -76,17 +53,18 @@
     @include hover {
       &:not([disabled]) {
         background: $brand-main;
-        color: $main-bg;
+        color: $body-bg;
       }
+    }
+    &[disabled] {
+      background: transparent !important;
     }
     &.secondary {
       background: transparent;
       border-color: $secondary;
       color: $secondary;
       @include hover {
-        &:not([disabled]) {
-          background: $secondary;
-        }
+        background: $secondary;
       }
     }
     @if $output-color-buttons {
@@ -95,9 +73,7 @@
         border-color: $info;
         color: $info;
         @include hover {
-          &:not([disabled]) {
-            background: $info;
-          }
+          background: $info;
         }
       }
       &.success {
@@ -105,9 +81,7 @@
         border-color: $success;
         color: $success;
         @include hover {
-          &:not([disabled]) {
-            background: $success;
-          }
+          background: $success;
         }
       }
       &.warning {
@@ -115,9 +89,7 @@
         border-color: $warning;
         color: $warning;
         @include hover {
-          &:not([disabled]) {
-            background: $warning;
-          }
+          background: $warning;
         }
       }
       &.danger {
@@ -125,29 +97,27 @@
         border-color: $danger;
         color: $danger;
         @include hover {
-          &:not([disabled]) {
-            background: $danger;
-          }
+          background: $danger;
         }
       }
     }
   }
   &.inverted {
-    background: $main-bg;
-    color: $main-color;
+    background: $body-bg;
+    color: $body-color;
     @include hover {
       &:not([disabled]) {
-        background: darken($main-bg, 15%);
+        background: darken($body-bg, 15%);
       }
     }
     &.outlined {
       background: transparent;
-      color: $main-bg;
-      border-color: $main-bg;
+      color: $body-bg;
+      border-color: $body-bg;
       @include hover {
         &:not([disabled]) {
-          background: $main-bg;
-          color: $main-color;
+          background: $body-bg;
+          color: $body-color;
         }
       }
     }

@@ -45,6 +45,15 @@ module.exports = {
       optionalDependencies: ['test/unit/index.js']
     }],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  }
-}
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+  },
+  overrides: [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "indent": "off",
+        "vue/script-indent": ["error", 2, { "baseIndent": 1 }]
+      }
+    }
+  ]
+};
