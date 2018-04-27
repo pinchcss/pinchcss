@@ -1,9 +1,16 @@
 build
 config
-doc
+docs
 node_modules
 src
 static
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.postcssrc.js
+index.html
+
 .sass-cache
 .DS_Store
 *.map

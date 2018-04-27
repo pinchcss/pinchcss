@@ -10,6 +10,7 @@ pids
 *.seed
 *.pid.lock
 
+docs/
 
 
 # Dependency directories
