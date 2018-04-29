@@ -1,12 +1,12 @@
 $output-reboot: true !default; // you can switchoff reboot if you use something better
 
-$output-color-buttons: true !default;
-$output-input-buttons-types: true !default; // if you will use input[type=submit]
-$output-button-class: true !default;
+$output-color-buttons: true !default; // more buttons colors
+$output-input-buttons-types: true !default; // if you will use input[type=submit] and other
+$output-button-class: true !default; // if you want to style links like buttons
 
 $unstyle-fieldset: false !default;
 
-$output-input-types: true !default;
+$style-checkboxes: true !default;
 $style-select: true !default;
 
 //
@@ -82,6 +82,7 @@ $border-radius: 5/$font-base * 1em !default;
 $input-border-color: $dark-accent;
 $input-border-width: $border-width;
 $label-margin-bottom: .25em;
+$input-margin-mottom: .5ex;
 
 
 

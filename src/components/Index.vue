@@ -15,23 +15,7 @@
     </p>
     <fieldset>
       <legend>Fieldset Legend</legend>
-      <p class="field">
-        <label for="text">Text</label>
-        <input type="text" name="text" id="text" placeholder="text">
-      </p>
-      <p class="field">
-        <label for="textarea">Textarea</label>
-        <textarea name="textarea" id="textarea" placeholder="Textarea"></textarea>
-      </p>
-      <p class="field">
-        <label for="select">Select</label>
-        <select name="select" id="select">
-          <option value="">Select Item</option>
-          <option value="1">Option 1</option>
-          <option value="1">Option 2</option>
-          <option value="1">Option 3</option>
-        </select>
-      </p>
+      <examples-inputs />
     </fieldset>
     <examples-buttons />
   </div>
@@ -39,11 +23,13 @@
 
 <script>
   import ExamplesButtons from './examples/Buttons';
+  import ExamplesInputs from './examples/Inputs';
 
   export default {
     name: 'Index',
     components: {
       ExamplesButtons,
+      ExamplesInputs,
     },
   };
 </script>

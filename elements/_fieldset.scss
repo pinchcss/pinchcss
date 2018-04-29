@@ -29,10 +29,7 @@
   @if $unstyle-fieldset {
 
     legend {
-      font-weight: bold;
-      display: block;
-      width: 100%;
-      margin-bottom: 1em;
+      margin-bottom: 1rem;
     }
 
     fieldset {
@@ -46,8 +43,8 @@
     legend {
       padding: 0 .25em;
       margin-left: -.25em;
-      font-weight: bold;
-      display: block;
+      vertical-align: top;
+      font-weight: 600;
       width: auto;
       font-size: 1.2em;
     }
