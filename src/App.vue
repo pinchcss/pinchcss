@@ -55,4 +55,12 @@
     }
   }
 
+  .grid {
+    @extend %grid-md;
+  }
+
+  .col {
+    @extend %col;
+  }
+
 </style>

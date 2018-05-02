@@ -1,48 +1,44 @@
 <template>
   <section>
     <p>
-      <button>Default</button>
-      <button class="primary">Primary</button>
-      <button class="info">Info</button>
-      <button class="success">Success</button>
-      <button class="warning">Warninig</button>
-      <button class="danger">Danger</button>
+      <template v-for="(title, key) in colors">
+        <button
+          :class="key === 'default' ? '': key"
+          :key="key">{{ title }}</button>&#32;
+      </template>
     </p>
 
     <p>
-      <button disabled>Disabled</button>
-      <button class="primary" disabled>Primary</button>
-      <button class="info" disabled>Info</button>
-      <button class="success" disabled>Success</button>
-      <button class="warning" disabled>Warninig</button>
-      <button class="danger" disabled>Danger</button>
+      <template v-for="(title, key) in colors">
+        <button disabled
+          :class="key === 'default' ? '': key"
+          :key="key">{{ key === 'default' ? 'Disabled' : title }}</button>&#32;
+      </template>
     </p>
 
     <p>
-      <input type="button" value="Default"/>
-      <input type="button" class="primary" value="Primary"/>
-      <input type="button" class="info" value="Info"/>
-      <input type="button" class="success" value="Success"/>
-      <input type="button" class="warning" value="Warninig"/>
-      <input type="button" class="danger" value="Danger"/>
+      <template v-for="(title, key, i) in colors">
+        <input :type="i % 2 === 0 ? 'submit' : 'button'"
+               :class="key === 'default' ? '': key"
+               :value="title"
+               :key="key" />&#32;
+      </template>
     </p>
 
     <p>
-      <button class="outlined">Outlined</button>
-      <button class="primary outlined">Primary</button>
-      <button class="info outlined">Info</button>
-      <button class="success outlined">Success</button>
-      <button class="warning outlined">Warninig</button>
-      <button class="danger outlined">Danger</button>
+      <template v-for="(title, key) in colors">
+        <button class="outlined"
+                :class="key === 'default' ? '': key"
+                :key="key">{{ key === 'default' ? 'Outlined' : title }}</button>&#32;
+      </template>
     </p>
 
     <p>
-      <button class="outlined" disabled>Outlined</button>
-      <button class="primary outlined" disabled>Primary</button>
-      <button class="info outlined" disabled>Info</button>
-      <button class="success outlined" disabled>Success</button>
-      <button class="warning outlined" disabled>Warninig</button>
-      <button class="danger outlined" disabled>Danger</button>
+      <template v-for="(title, key) in colors">
+        <button class="outlined" disabled
+                :class="key === 'default' ? '': key"
+                :key="key">{{ key === 'default' ? 'Outlined' : title }}</button>&#32;
+      </template>
     </p>
 
     <p class="box inverted">
@@ -50,15 +46,17 @@
       <button class="inverted outlined">Outlined</button>
       <a class="button inverted" href="#">Inverted</a>
       <a class="button inverted outlined" href="#">Outlined</a>
+      <button class="inverted" disabled>Inverted</button>
+      <a class="button inverted outlined" href="#" disabled>Outlined</a>
     </p>
 
     <p>
-      <a class="button outlined" href="#">Outlined</a>
-      <a class="button primary outlined" href="#" disabled>Primary</a>
-      <a class="button info" href="#">Info</a>
-      <a class="button success" href="#">Success</a>
-      <a class="button warning" href="#" disabled>Warninig</a>
-      <a class="button danger outlined" href="#">Danger</a>
+      <template v-for="(title, key, i) in colors">
+        <a href="#" class="button"
+                :disabled="(i+1) % 3 === 0"
+                :class="[key === 'default' ? '': key, i % 2 !== 0 ? 'outlined' : '' ]"
+                :key="key">{{ title }}</a>&#32;
+      </template>
     </p>
 
   </section>
@@ -66,6 +64,18 @@
 
 <script>
   export default {
+    data() {
+      return {
+        colors: {
+          default: 'Default',
+          primary: 'Primary',
+          info: 'Info',
+          success: 'Success',
+          warning: 'Warning',
+          danger: 'Danger',
+        },
+      };
+    },
     name: 'examples-buttons',
   };
 </script>

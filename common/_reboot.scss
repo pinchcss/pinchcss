@@ -119,8 +119,8 @@
   ol,
   ul,
   dl {
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin:0 0 $gap  $gap * 1.5;
+    padding-left: 0;
   }
 
   ol ol,
