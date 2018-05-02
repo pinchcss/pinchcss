@@ -1,10 +1,9 @@
-$output-reboot: true !default; // you can switchoff reboot if you use something better
+//$output-reboot: true !default; // you can switchoff reboot if you use something better
 
 $output-color-buttons: true !default; // more buttons colors
+$output-outlined-buttons: true !default;
 $output-input-buttons-types: true !default; // if you will use input[type=submit] and other
 $output-button-class: true !default; // if you want to style links like buttons
-
-$unstyle-fieldset: false !default;
 
 $style-checkboxes: true !default;
 $style-select: true !default;
@@ -38,14 +37,14 @@ $paragraph-margin-bottom: 1rem;
 //
 
 //generated on http://colormind.io/bootstrap/
-$light-shades: #eeeae8 !default;
-$light-accent: #75a1b5 !default;
-$brand-main: #37a5bf !default;
-$dark-accent: #74746f !default;
-$dark-shades: #1e1b1e !default;
+$light-shades: #faf9f9 !default;
+$light-accent: #67accb !default;
+$brand-main: #2585ce !default;
+$dark-accent: #2665a0 !default;
+$dark-shades: #162a6a !default;
 
-$color-green: #46ac71 !default;
-$color-yellow: #c39c39 !default;
+$color-green: #40a276 !default;
+$color-yellow: #be923e !default;
 $color-red: #f44336 !default;
 
 $color-black: #0d0d0e !default;
@@ -61,14 +60,14 @@ $link-decoration: underline;
 $link-hover-color: lighten($brand-main, 15%);
 $link-hover-decoration: none;
 
-$secondary: $dark-accent !default;
+$default: $color-midgray;
+$primary: $brand-main !default;
 $info: $dark-shades !default;
 $success: $color-green !default;
 $warning: $color-yellow !default;
 $danger: $color-red !default;
 
-$body-color: $dark-shades !default;
-$text-color: lighten($dark-shades, 10%) !default;
+$body-color: $color-black !default;
 $body-bg: $light-shades !default;
 
 
@@ -79,7 +78,7 @@ $gap-md: 1.5em !default;
 $border-width: 2/$font-base * 1em !default;
 $border-radius: 5/$font-base * 1em !default;
 
-$input-border-color: $dark-accent;
+$input-border-color: $color-darkgray;
 $input-border-width: $border-width;
 $label-margin-bottom: .25em;
 $input-margin-mottom: .5ex;

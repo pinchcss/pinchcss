@@ -38,14 +38,10 @@ $radio-mark: (
   @include focus {
     box-shadow: 0 0 5px $input-border-color inset;
   };
-  @at-root ::placeholder {
-    opacity: 1;
-    color: rgba($body-color, .5);
-  }
 }
 
 @mixin check_radio {
-  @if $style-checkboxes{
+  @if $style-checkboxes {
     position: absolute;
     left: -999em;
 
@@ -134,13 +130,18 @@ $radio-mark: (
 
 
 %input { @include input; }
-%check_radio { @include check_radio; }
 
 
 @mixin inputs {
   input {
     @extend %input;
+    @at-root ::placeholder {
+      opacity: 1;
+      color: rgba($body-color, .5);
+    }
   }
+
+  %check_radio { @include check_radio; }
 
   input{
     &[type=checkbox],

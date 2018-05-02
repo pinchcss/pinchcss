@@ -10,6 +10,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     pinch: './pinch.scss',
+    'pinch.reset': './pinch.reset.scss',
   },
   output: {
     filename: '[name].min.css'

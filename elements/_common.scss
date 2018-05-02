@@ -1,1 +1,9 @@
-
+%a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+  transition: all .5s;
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}

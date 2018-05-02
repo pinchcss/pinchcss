@@ -14,11 +14,12 @@
 </script>
 
 <style lang="scss">
-  @import "../pinch.scss";
+  @import "../pinch";
 
   #app {
     @extend %container;
   }
+
   header {
     @extend %container-invert;
     position: sticky;
@@ -45,4 +46,13 @@
   .field {
     @extend %field;
   }
+
+  .box {
+    @extend %box;
+    &.inverted {
+      background: $body-color;
+      color: $body-bg;
+    }
+  }
+
 </style>

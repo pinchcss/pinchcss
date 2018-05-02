@@ -15,5 +15,14 @@
   }
 }
 
+@mixin box {
+  padding: $gap;
+  @include media(">=md") {
+    padding: $gap-md;
+  }
+}
+
+
 %container { @include container; }
 %container-invert { @include container-invert;}
+%box { @include box;}
