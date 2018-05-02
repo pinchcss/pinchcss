@@ -1,7 +1,7 @@
 @mixin field {
   margin: 0 0 1em;
   label {
-    display: inline-block;
+    display: block;
   }
   fieldset &:last-child {
     margin-bottom: 0;
@@ -22,15 +22,7 @@
   }
 }
 
-%field {
-  @include field;
-  [type=checkbox],
-  [type=radio] {
-    & + label {
-      display: inline;
-    }
-  }
-}
+%field { @include field; }
 %field-inline { @include field-inline; }
 
 @mixin fieldset {

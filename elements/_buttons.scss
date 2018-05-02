@@ -11,7 +11,7 @@
   cursor: pointer;
   transition: all .5s ease;
   padding: em(6) em(24);
-  margin-bottom: $input-margin-mottom;
+  margin-bottom: $input-margin-bottom;
   user-select: none;
   @include focus {}
   @include hover {

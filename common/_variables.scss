@@ -1,12 +1,12 @@
-//$output-reboot: true !default; // you can switchoff reboot if you use something better
+$output-reboot: false !default; // you can switchoff reboot if you use something better
 
-$output-color-buttons: true !default; // more buttons colors
-$output-outlined-buttons: true !default;
-$output-input-buttons-types: true !default; // if you will use input[type=submit] and other
-$output-button-class: true !default; // if you want to style links like buttons
+$output-color-buttons: false !default; // more buttons colors
+$output-outlined-buttons: false !default;
+$output-input-buttons-types: false !default; // if you will use input[type=submit] and other
+$output-button-class: false !default; // if you want to style links like buttons
 
-$style-checkboxes: true !default;
-$style-select: true !default;
+$style-checkboxes: false !default;
+$style-select: false !default;
 
 //
 // TYPOGRAPHY
@@ -81,7 +81,7 @@ $border-radius: 5/$font-base * 1em !default;
 $input-border-color: $color-darkgray;
 $input-border-width: $border-width;
 $label-margin-bottom: .25em;
-$input-margin-mottom: .5ex;
+$input-margin-bottom: .5ex;
 
 
 

@@ -1,6 +1,6 @@
+@import "common/output";
 @import "import";
 
-@include reboot();
 @include buttons();
 @include fieldset();
 @include inputs();

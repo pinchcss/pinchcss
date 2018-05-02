@@ -1,4 +1,2 @@
-@import "common/clean";
+$output-reboot: true;
 @import "import";
-
-@include reboot();
