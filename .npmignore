@@ -9,6 +9,7 @@ static
 .eslintignore
 .eslintrc.js
 .postcssrc.js
+.idea
 index.html
 
 .sass-cache
