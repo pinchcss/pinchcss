@@ -2,7 +2,7 @@ $checkbox-input: (
   width: 1em,
   height: 1em,
   border: $input-border-width solid $input-border-color,
-  border-radius: $border-radius,
+  border-radius: $input-border-radius,
 ) !default;
 
 $checkbox-mark: (
@@ -26,15 +26,15 @@ $radio-mark: (
   box-sizing: border-box;
   min-height: 2.5em;
   line-height: 1.5;
-  border: $input-border-width $input-border-color solid;
-  border-radius: $border-radius;
   background: transparent;
+  border: $input-border-width $input-border-color solid;
+  border-radius: $input-border-radius;
   color: $body-color;
-  transition: all .5s ease;
-  padding: em(6) em(12);
+  padding: $input-padding;
   margin-bottom: $input-margin-bottom;
   display: block;
   width: 100%;
+  transition: all .5s ease;
   @include focus {
     box-shadow: 0 0 5px $input-border-color inset;
   };

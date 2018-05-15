@@ -2,8 +2,8 @@
   box-sizing: border-box;
   min-height: 2.5em;
   line-height: 1.5;
-  border: $border-width transparent solid;
-  border-radius: $border-radius;
+  border: $input-border-width transparent solid;
+  border-radius: $input-border-radius;
   background: $default;
   font-weight: 500;
   text-align: center;
@@ -13,7 +13,7 @@
   padding: em(6) em(24);
   margin-bottom: $input-margin-bottom;
   user-select: none;
-  @include focus {}
+  transition: all .5s ease;
   @include hover {
     box-shadow: inset 0 0 0 99px rgba(0,0,0, .30);
   }

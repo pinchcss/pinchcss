@@ -19,8 +19,8 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco,
 Consolas, "Liberation Mono", "Courier New",
 monospace !default;
 
-$font-base: 16;
-$font-size-base: 1rem !default;
+$font-base: 16 !default;
+$font-size-base: $font-base/16 * 1rem !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $line-height-base: 1.5 !default;
@@ -28,9 +28,9 @@ $font-weight-base: 400 !default;
 
 $dt-font-weight: 500 !default;
 
-$headings-margin-bottom: 1rem !default;
+$headings-margin-bottom: $font-base/16 * 1rem !default;
 $headings-font-weight: 700 !default;
-$paragraph-margin-bottom: 1rem !default;
+$paragraph-margin-bottom: $font-base/16 * 1rem !default;
 
 
 //
@@ -79,11 +79,16 @@ $gap-md: 1.5em !default;
 $border-width: 2/$font-base * 1em !default;
 $border-radius: 5/$font-base * 1em !default;
 
-$input-border-color: $color-darkgray;
-$input-border-width: $border-width;
-$label-margin-bottom: .25em;
-$input-margin-bottom: .5ex;
-
+//
+// FORMS
+//
+$input-border-color: $color-darkgray !default;
+$input-border-width: $border-width !default;
+$input-border-radius: $border-radius !default;
+$input-padding: 6/$font-base * 1em 12/$font-base * 1em;
+$button-padding: 6/$font-base * 1em 24/$font-base * 1em;
+$label-margin-bottom: .25em !default;
+$input-margin-bottom: .5ex !default;
 
 
 $table-cell-padding: .75rem !default;

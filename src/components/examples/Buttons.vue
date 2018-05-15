@@ -3,6 +3,7 @@
     <p>
       <template v-for="(title, key) in colors">
         <button
+          ontouchstart
           :class="key === 'default' ? '': key"
           :key="key">{{ title }}</button>&#32;
       </template>
@@ -44,8 +45,8 @@
     <p class="box inverted">
       <button class="inverted">Inverted</button>
       <button class="inverted outlined">Outlined</button>
-      <a class="button inverted" href="#">Inverted</a>
-      <a class="button inverted outlined" href="#">Outlined</a>
+      <a @click.prevent class="button inverted" href="#">Inverted</a>
+      <a @click.prevent class="button inverted outlined" href="#">Outlined</a>
       <button class="inverted" disabled>Inverted</button>
       <a class="button inverted outlined" href="#" disabled>Outlined</a>
     </p>
@@ -53,9 +54,10 @@
     <p>
       <template v-for="(title, key, i) in colors">
         <a href="#" class="button"
-                :disabled="(i+1) % 3 === 0"
-                :class="[key === 'default' ? '': key, i % 2 !== 0 ? 'outlined' : '' ]"
-                :key="key">{{ title }}</a>&#32;
+           @click.prevent
+           :disabled="(i+1) % 3 === 0"
+           :class="[key === 'default' ? '': key, i % 2 !== 0 ? 'outlined' : '' ]"
+           :key="key">{{ title }}</a>&#32;
       </template>
     </p>
 
@@ -64,6 +66,7 @@
 
 <script>
   export default {
+    name: 'examples-buttons',
     data() {
       return {
         colors: {
@@ -76,6 +79,5 @@
         },
       };
     },
-    name: 'examples-buttons',
   };
 </script>
