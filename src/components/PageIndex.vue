@@ -5,12 +5,12 @@ import ExamplesInputs from './examples/ExamplesInputs.vue';
 </script>
 
 <template>
-  <div class="container">
-    <examples-typography />
-    <fieldset>
-      <legend>Fieldset Legend</legend>
-      <examples-inputs />
-    </fieldset>
-    <examples-buttons />
-  </div>
+	<div class="container">
+		<examples-typography />
+		<fieldset>
+			<legend>Fieldset Legend</legend>
+			<examples-inputs />
+		</fieldset>
+		<examples-buttons />
+	</div>
 </template>

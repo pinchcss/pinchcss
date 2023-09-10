@@ -52,7 +52,8 @@ const colors = {
 
 		<p class="box inverted">
 			<button class="inverted">Inverted</button>{{ '&#32;' }}
-			<button class="inverted outlined">Outlined</button>{{ '&#32;' }}
+			<button class="inverted outlined">Outlined</button
+			>{{ '&#32;' }}
 			<a @click.prevent class="button inverted" href="#">Inverted</a>{{ '&#32;' }}
 			<a @click.prevent class="button inverted outlined" href="#">Outlined</a>{{ '&#32;' }}
 			<button class="inverted" disabled>Inverted</button>{{ '&#32;' }}
@@ -66,7 +67,8 @@ const colors = {
 					class="button"
 					@click.prevent
 					:disabled="(i + 1) % 3 === 0"
-					:class="[key === 'default' ? '' : key, i % 2 !== 0 ? 'outlined' : '']">
+					:class="[key === 'default' ? '' : key, i % 2 !== 0 ? 'outlined' : '']"
+				>
 					{{ title }}
 				</a>
 				{{ '&#32;' }}
