@@ -1,7 +1,7 @@
 {
   "name": "pinchcss",
   "version": "0.0.10",
-  "description": "Pinchcss micro css framework",
+  "description": "[WORK IN PROGRESS] Pinchcss micro css framework",
   "author": "Eugene Tereshchenko <i@jman.info>",
   "scripts": {
     "dev": "HOST=0.0.0.0 webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -70,5 +70,6 @@
   ],
   "dependencies": {
     "include-media": "^1.4.9"
-  }
+  },
+  "license": "MIT"
 }
