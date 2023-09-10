@@ -10,53 +10,53 @@ import PageIndex from '@/components/PageIndex.vue';
 </template>
 
 <style lang="scss">
-  @import "../pinch";
+@import "../pinch";
 
-  #app {
-    @extend %container;
-  }
+#app {
+	@extend %container;
+}
 
-  header {
-    @extend %container-invert;
-    position: sticky;
-    z-index: 1;
-    top:0;
-    margin-bottom: 1em;
-    padding-top: .35em;
-    padding-bottom: .35em;
-    background: $brand-main;
-    color: $body-bg;
-    text-align: center;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0, .5);
-  }
+header {
+	@extend %container-invert;
+	position: sticky;
+	z-index: 1;
+	top:0;
+	margin-bottom: 1em;
+	padding-top: .35em;
+	padding-bottom: .35em;
+	background: $brand-main;
+	color: $body-bg;
+	text-align: center;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0, .5);
+}
 
-  .brand-logo {
-    font-size: 1.5em;
-    font-weight: 900;
-    letter-spacing: .1ex;
-    font-variant: small-caps;
-    text-shadow: 1px 1px 0 rgba(0,0,0, .5);
-    margin-bottom: 0;
-  }
+.brand-logo {
+	font-size: 1.5em;
+	font-weight: 900;
+	letter-spacing: .1ex;
+	font-variant: small-caps;
+	text-shadow: 1px 1px 0 rgba(0,0,0, .5);
+	margin-bottom: 0;
+}
 
-  .field {
-    @extend %field;
-  }
+.field {
+	@extend %field;
+}
 
-  .box {
-    @extend %box;
-    &.inverted {
-      background: $body-color;
-      color: $body-bg;
-    }
-  }
+.box {
+	@extend %box;
+	&.inverted {
+		background: $body-color;
+		color: $body-bg;
+	}
+}
 
-  .grid {
-    @extend %grid-md;
-  }
+.grid {
+	@extend %grid-md;
+}
 
-  .col {
-    @extend %col;
-  }
+.col {
+	@extend %col;
+}
 
 </style>
