@@ -4,6 +4,7 @@
   "description": "[WORK IN PROGRESS] Pinchcss micro css framework",
   "author": "Eugene Tereshchenko <i@jman.info>",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "HOST=0.0.0.0 webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
@@ -36,7 +37,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.1.2",
-    "node-sass": "^4.9.0",
+    "node-sass": "^9.0.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.13",
@@ -60,8 +61,8 @@
     "webpack-merge": "^4.1.0"
   },
   "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 18.0.0",
+    "pnpm": ">= 8.0.0"
   },
   "browserslist": [
     "> 1%",
@@ -69,7 +70,8 @@
     "not ie <= 8"
   ],
   "dependencies": {
-    "include-media": "^1.4.9"
+    "include-media": "^1.4.9",
+    "vue-hot-reload-api": "^2.3.4"
   },
   "license": "MIT"
 }
