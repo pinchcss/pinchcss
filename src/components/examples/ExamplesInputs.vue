@@ -1,3 +1,13 @@
+<script setup>
+import { ref } from 'vue';
+const select = ref('');
+const fields = {
+	text: 'Text',
+	email: 'Email',
+	search: 'Search',
+};
+</script>
+
 <template>
   <section>
     <p class="field" v-for="(label, type) in fields" :key="type">
@@ -38,23 +48,3 @@
     </p>
   </section>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        select: '',
-        fields: {
-          text: 'Text',
-          email: 'Email',
-          search: 'Search',
-        },
-      };
-    },
-    name: 'examples-inputs',
-  };
-</script>
-
-<style scoped>
-
-</style>

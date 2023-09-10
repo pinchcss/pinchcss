@@ -1,3 +1,4 @@
+@use 'sass:math';
 $output-reboot: false !default; // you can switchoff reboot if you use something better
 
 $output-color-buttons: false !default; // more buttons colors
@@ -20,7 +21,7 @@ Consolas, "Liberation Mono", "Courier New",
 monospace !default;
 
 $font-base: 16 !default;
-$font-size-base: $font-base/16 * 1rem !default;
+$font-size-base: math.div($font-base,16) * 1rem !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $line-height-base: 1.5 !default;
@@ -28,9 +29,9 @@ $font-weight-base: 400 !default;
 
 $dt-font-weight: 500 !default;
 
-$headings-margin-bottom: $font-base/16 * 1rem !default;
+$headings-margin-bottom: math.div($font-base,16) * 1rem !default;
 $headings-font-weight: 700 !default;
-$paragraph-margin-bottom: $font-base/16 * 1rem !default;
+$paragraph-margin-bottom: math.div($font-base, 16) * 1rem !default;
 
 
 //
@@ -76,8 +77,8 @@ $body-bg: $light-shades !default;
 $gap: 1em !default;
 $gap-md: 1.5em !default;
 
-$border-width: 2/$font-base * 1em !default;
-$border-radius: 5/$font-base * 1em !default;
+$border-width: math.div(2,$font-base) * 1em !default;
+$border-radius: math.div(5,$font-base) * 1em !default;
 
 //
 // FORMS
@@ -85,8 +86,8 @@ $border-radius: 5/$font-base * 1em !default;
 $input-border-color: $color-darkgray !default;
 $input-border-width: $border-width !default;
 $input-border-radius: $border-radius !default;
-$input-padding: 6/$font-base * 1em 12/$font-base * 1em;
-$button-padding: 6/$font-base * 1em 24/$font-base * 1em;
+$input-padding: math.div(6, $font-base) * 1em math.div(12, $font-base) * 1em;
+$button-padding: math.div(6, $font-base) * 1em math.div(24, $font-base) * 1em;
 $label-margin-bottom: .25em !default;
 $input-margin-bottom: .5ex !default;
 

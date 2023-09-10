@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Replace `$search` with `$replace` in `$string`
 // Used on our SVG icon backgrounds for custom forms.
 //
@@ -44,9 +46,9 @@
 }
 
 @function rem($pixels, $context: $font-base) {
-  @return (strip-unit($pixels)/$context) * 1rem;
+  @return math.div(strip-unit($pixels), $context) * 1rem;
 }
 
 @function em($pixels, $context: $font-base) {
-  @return (strip-unit($pixels)/$context) * 1em;
+  @return math.div(strip-unit($pixels), $context) * 1em;
 }

@@ -1,17 +1,13 @@
-<template>
-  <div id="app">
-    <header>
-      <h1 class="brand-logo">Pinch Css Framework</h1>
-    </header>
-    <router-view/>
-  </div>
-</template>
-
-<script>
-  export default {
-    name: 'App',
-  };
+<script setup>
+import PageIndex from '@/components/PageIndex.vue';
 </script>
+
+<template>
+	<header>
+		<h1 class="brand-logo">Pinch Css Framework</h1>
+	</header>
+	<page-index/>
+</template>
 
 <style lang="scss">
   @import "../pinch";

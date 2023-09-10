@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $checkbox-input: (
   width: 1em,
   height: 1em,
@@ -55,11 +57,11 @@ $radio-mark: (
         content: '';
         position: absolute;
         box-sizing: border-box;
-        top: $line-height-base/2 * 1em;
+        top: math.div($line-height-base, 2) * 1em;
         transition: all .5s ease;
       }
       &:before {
-        left: map_get($checkbox-input, width) / 2;
+        left: math.div(map_get($checkbox-input, width), 2);
         transform: translate(-50%, -50%);
         @include print-styles($checkbox-input);
       }
@@ -86,7 +88,7 @@ $radio-mark: (
     @at-root input {
       &[type='checkbox'] + label {
         &:after {
-          left: map_get($checkbox-input, width) / 2 - map_get($checkbox-mark, width) / 2;
+          left: math.div(map_get($checkbox-input, width), 2) - math.div(map_get($checkbox-mark, width), 2);
           @include print-styles($checkbox-mark);
         }
       }
@@ -95,7 +97,7 @@ $radio-mark: (
           border-radius: 50%;
         }
         &:after {
-          left: map_get($checkbox-input, width) / 2;
+          left: math.div(map_get($checkbox-input, width), 2);
           @include print-styles($radio-mark);
         }
       }

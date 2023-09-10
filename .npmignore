@@ -1,18 +1,17 @@
-build
-config
 docs
 node_modules
 src
-static
-.babelrc
+public
 .editorconfig
-.eslintignore
-.eslintrc.js
-.postcssrc.js
-.idea
+.eslintrc.cjs
+.nvmrc
+.prettierrc
+playwright.config.js
+postcss.config.cjs
 index.html
 
 .sass-cache
 .DS_Store
+.vscode
 *.map
 sassdoc
