@@ -14,7 +14,7 @@
 		"start": "pnpm run dev",
 		"dev": "vite",
 		"build": "vite build && rimraf ./pinch*.js",
-		"preview": "vite preview",
+		"doc": "vite build --mode documentation",
 		"test:e2e": "playwright test",
 		"lint": "eslint . --ext .vue,.js,.cjs,.mjs --fix --ignore-path .gitignore",
 		"format": "prettier --write src/"

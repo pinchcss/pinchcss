@@ -12,4 +12,12 @@ module.exports = {
 		es2017: true,
 		node: true,
 	},
+	overrides: [
+    {
+      files: ['*.html'],
+      rules: {
+        'vue/comment-directive': 'off'
+      }
+    }
+  ]
 };
