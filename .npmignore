@@ -2,12 +2,15 @@ docs
 node_modules
 src
 public
+e2e
+test-results
 .editorconfig
 .eslintrc.cjs
 .nvmrc
 .prettierrc
 playwright.config.js
 postcss.config.cjs
+vite.config.js
 index.html
 
 .sass-cache
