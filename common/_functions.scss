@@ -10,45 +10,49 @@
 // @return {String} - Updated string
 
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+	$index: str-index($string, $search);
 
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-  }
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace +
+			str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
 
-  @return $string;
+	@return $string;
 }
 
 // Escape svg to make it work in Firefox(1) and MSIE(2)
 
 @function svg-replace($string) {
-  $map: (
-    '#': '%23', // 1
-    '<':'%3C',  // 2
-    '>':'%3E',  // 2
-    '"':"'",    // 2
-  );
+	$map: (
+		'#': '%23',
+		// 1
+		'<': '%3C',
+		// 2
+		'>': '%3E',
+		// 2
+		'"': "'",
+		// 2
+	);
 
-  @each $search, $replace in $map {
-    $string: str-replace($string, $search, $replace);
-  }
+	@each $search, $replace in $map {
+		$string: str-replace($string, $search, $replace);
+	}
 
-  @return $string;
+	@return $string;
 }
 
-
 @function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
 
-  @return $number;
+	@return $number;
 }
 
 @function rem($pixels, $context: $font-base) {
-  @return math.div(strip-unit($pixels), $context) * 1rem;
+	@return math.div(strip-unit($pixels), $context) * 1rem;
 }
 
 @function em($pixels, $context: $font-base) {
-  @return math.div(strip-unit($pixels), $context) * 1em;
+	@return math.div(strip-unit($pixels), $context) * 1em;
 }

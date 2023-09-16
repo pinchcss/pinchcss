@@ -1,44 +1,50 @@
 @mixin field {
-  margin: 0 0 1em;
-  label {
-    display: block;
-  }
-  fieldset &:last-child {
-    margin-bottom: 0;
-  }
+	margin: 0 0 1em;
+	label {
+		display: block;
+	}
+	fieldset &:last-child {
+		margin-bottom: 0;
+	}
 }
 
 @mixin field-inline {
-  margin: 0 0 1em;
-  display: flex;
-  label {
-    margin:0 .5em 0 0;
-  }
-  input, textarea, select {
-    flex-grow: 1;
-  }
-  fieldset &:last-child {
-    margin-bottom: 0;
-  }
+	margin: 0 0 1em;
+	display: flex;
+	label {
+		margin: 0 0.5em 0 0;
+	}
+	input,
+	textarea,
+	select {
+		flex-grow: 1;
+	}
+	fieldset &:last-child {
+		margin-bottom: 0;
+	}
 }
 
-%field { @include field; }
-%field-inline { @include field-inline; }
+%field {
+	@include field;
+}
+%field-inline {
+	@include field-inline;
+}
 
 @mixin fieldset {
-  legend {
-    padding: 0 .25em;
-    margin-left: -.25em;
-    vertical-align: top;
-    font-weight: 600;
-    width: auto;
-    font-size: 1.2em;
-  }
+	legend {
+		padding: 0 0.25em;
+		margin-left: -0.25em;
+		vertical-align: top;
+		font-weight: 600;
+		width: auto;
+		font-size: 1.2em;
+	}
 
-  fieldset {
-    border: $border-width $body-color solid;
-    border-radius: $border-radius;
-    padding: $gap * .46 $gap $gap;
-    margin: 0 0 $gap;
-  }
+	fieldset {
+		border: $border-width $body-color solid;
+		border-radius: $border-radius;
+		padding: $gap * 0.46 $gap $gap;
+		margin: 0 0 $gap;
+	}
 }

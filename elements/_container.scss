@@ -1,28 +1,33 @@
 @mixin container {
-  margin: 0 $gap;
-  @include media(">=md") {
-    margin: 0 $gap-md;
-  }
+	margin: 0 $gap;
+	@include media('>=md') {
+		margin: 0 $gap-md;
+	}
 }
 
 @mixin container-invert {
-  margin: 0 (-$gap);
-  padding: 0 $gap;
-  box-sizing: border-box;
-  @include media(">=md") {
-    padding: 0 $gap-md;
-    margin: 0 (-$gap-md);
-  }
+	margin: 0 (-$gap);
+	padding: 0 $gap;
+	box-sizing: border-box;
+	@include media('>=md') {
+		padding: 0 $gap-md;
+		margin: 0 (-$gap-md);
+	}
 }
 
 @mixin box {
-  padding: $gap;
-  @include media(">=md") {
-    padding: $gap-md;
-  }
+	padding: $gap;
+	@include media('>=md') {
+		padding: $gap-md;
+	}
 }
 
-
-%container { @include container; }
-%container-invert { @include container-invert;}
-%box { @include box;}
+%container {
+	@include container;
+}
+%container-invert {
+	@include container-invert;
+}
+%box {
+	@include box;
+}
