@@ -1,30 +1,29 @@
-@mixin print-styles($map){
-  @each $property, $value in $map {
-    #{$property}: $value;
-  }
+@mixin print-styles($map) {
+	@each $property, $value in $map {
+		#{$property}: $value;
+	}
 }
 
-
-@mixin hover ($all-devices: true){
-  @if $all-devices{
-    &:focus,
-    &:hover {
-      outline: 0;
-      @content;
-    }
-  } @else {
-    @include media('no-touch') {
-      &:focus,
-      &:hover {
-        @content;
-      }
-    }
-  }
+@mixin hover($all-devices: true) {
+	@if $all-devices {
+		&:focus,
+		&:hover {
+			outline: 0;
+			@content;
+		}
+	} @else {
+		@include media('no-touch') {
+			&:focus,
+			&:hover {
+				@content;
+			}
+		}
+	}
 }
 
-@mixin focus (){
-  &:focus {
-    outline: 0;
-    @content;
-  }
+@mixin focus() {
+	&:focus {
+		outline: 0;
+		@content;
+	}
 }

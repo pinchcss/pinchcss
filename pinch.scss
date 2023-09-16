@@ -1,5 +1,5 @@
-@import "common/output";
-@import "import";
+@import 'common/output';
+@import 'import';
 
 @include buttons();
 @include fieldset();

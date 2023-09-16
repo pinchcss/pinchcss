@@ -6,26 +6,26 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig(({ mode }) => {
 	const isDoc = mode === 'documentation';
 	const config = {
-		plugins: [
-			vue(),
-		],
+		plugins: [vue()],
 		resolve: {
 			alias: {
-				'@': fileURLToPath(new URL('./src', import.meta.url))
-			}
+				'@': fileURLToPath(new URL('./src', import.meta.url)),
+			},
 		},
 		css: {
 			lightningcss: {
 				sourceMap: true,
-			}
+			},
 		},
-	}
+	};
 
-	const lib = !isDoc ? {
-		entry: [resolve(__dirname, 'src/pinch.js'), resolve(__dirname, 'src/pinch.reset.js')],
-		name: 'pinch',
-		formats: ['es'],
-	} : undefined;
+	const lib = !isDoc
+		? {
+				entry: [resolve(__dirname, 'src/pinch.js'), resolve(__dirname, 'src/pinch.reset.js')],
+				name: 'pinch',
+				formats: ['es'],
+		  }
+		: undefined;
 
 	return {
 		...config,
@@ -38,9 +38,9 @@ export default defineConfig(({ mode }) => {
 			cssMinify: 'lightningcss',
 			rollupOptions: {
 				output: {
-					assetFileNames: "[name].min.[ext]",
+					assetFileNames: '[name].min.[ext]',
 				},
 			},
-		}
-	}
-})
+		},
+	};
+});

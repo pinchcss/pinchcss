@@ -1,168 +1,172 @@
 @mixin button {
-  box-sizing: border-box;
-  min-height: 2.5em;
-  line-height: 1.5;
-  border: $input-border-width transparent solid;
-  border-radius: $input-border-radius;
-  background: $default;
-  font-weight: 500;
-  text-align: center;
-  color: $body-bg;
-  cursor: pointer;
-  transition: all .5s ease;
-  padding: em(6) em(24);
-  margin-bottom: $input-margin-bottom;
-  user-select: none;
-  transition: all .5s ease;
-  @include hover {
-    box-shadow: inset 0 0 0 99px rgba(0,0,0, .30);
-  }
-  &:active {
-    transform: scale(.95);
-  }
-  &[disabled] {
-    opacity: .4;
-    cursor: not-allowed;
-    box-shadow: none !important;
-    transform: none !important;
-  }
-  &.primary {
-    background: $primary;
-  }
-  &.link {
-    padding: 0;
-    min-height: 0;
-    line-height: inherit;
-    background: none !important;
-    box-shadow: none;
-    font: inherit;
-    @extend %a;
-  }
+	box-sizing: border-box;
+	min-height: 2.5em;
+	line-height: 1.5;
+	border: $input-border-width transparent solid;
+	border-radius: $input-border-radius;
+	background: $default;
+	font-weight: 500;
+	text-align: center;
+	color: $body-bg;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	padding: em(6) em(24);
+	margin-bottom: $input-margin-bottom;
+	user-select: none;
+	transition: all 0.5s ease;
+	@include hover {
+		box-shadow: inset 0 0 0 99px rgba(0, 0, 0, 0.3);
+	}
+	&:active {
+		transform: scale(0.95);
+	}
+	&[disabled] {
+		opacity: 0.4;
+		cursor: not-allowed;
+		box-shadow: none !important;
+		transform: none !important;
+	}
+	&.primary {
+		background: $primary;
+	}
+	&.link {
+		padding: 0;
+		min-height: 0;
+		line-height: inherit;
+		background: none !important;
+		box-shadow: none;
+		font: inherit;
+		@extend %a;
+	}
 
-  @if $output-color-buttons {
-    &.info {
-      background: $info;
-      @include hover {
-        box-shadow: inset 0 0 0 99px  rgba(255, 255, 255, .20);
-      }
-    }
-    &.success {
-      background: $success;
-    }
-    &.warning {
-      background: $warning;
-    }
-    &.danger {
-      background: $danger;
-    }
-  }
-  @if $output-outlined-buttons {
-    &.outlined {
-      background: transparent;
-      border-color: $default;
-      color: $default;
-      @include hover {
-        &:not([disabled]) {
-          background: $default;
-          color: $body-bg;
-          box-shadow: none;
-        }
-      }
-      &[disabled] {
-        background: transparent !important;
-      }
-      &.primary {
-        background: transparent;
-        border-color: $primary;
-        color: $primary;
-        @include hover {
-          background: $primary;
-        }
-      }
-      @if $output-color-buttons {
-        &.info {
-          background: transparent;
-          border-color: $info;
-          color: $info;
-          @include hover {
-            background: $info;
-          }
-        }
-        &.success {
-          background: transparent;
-          border-color: $success;
-          color: $success;
-          @include hover {
-            background: $success;
-          }
-        }
-        &.warning {
-          background: transparent;
-          border-color: $warning;
-          color: $warning;
-          @include hover {
-            background: $warning;
-          }
-        }
-        &.danger {
-          background: transparent;
-          border-color: $danger;
-          color: $danger;
-          @include hover {
-            background: $danger;
-          }
-        }
-      }
-    }
-  }
-  &.inverted {
-    background: $body-bg;
-    color: $body-color;
-    @include hover {
-      &:not([disabled]) {
-        background: darken($body-bg, 15%);
-      }
-    }
-    &.outlined {
-      background: transparent;
-      color: $body-bg;
-      border-color: $body-bg;
-      @include hover {
-        &:not([disabled]) {
-          background: $body-bg;
-          color: $body-color;
-        }
-      }
-    }
-  }
+	@if $output-color-buttons {
+		&.info {
+			background: $info;
+			@include hover {
+				box-shadow: inset 0 0 0 99px rgba(255, 255, 255, 0.2);
+			}
+		}
+		&.success {
+			background: $success;
+		}
+		&.warning {
+			background: $warning;
+		}
+		&.danger {
+			background: $danger;
+		}
+	}
+	@if $output-outlined-buttons {
+		&.outlined {
+			background: transparent;
+			border-color: $default;
+			color: $default;
+			@include hover {
+				&:not([disabled]) {
+					background: $default;
+					color: $body-bg;
+					box-shadow: none;
+				}
+			}
+			&[disabled] {
+				background: transparent !important;
+			}
+			&.primary {
+				background: transparent;
+				border-color: $primary;
+				color: $primary;
+				@include hover {
+					background: $primary;
+				}
+			}
+			@if $output-color-buttons {
+				&.info {
+					background: transparent;
+					border-color: $info;
+					color: $info;
+					@include hover {
+						background: $info;
+					}
+				}
+				&.success {
+					background: transparent;
+					border-color: $success;
+					color: $success;
+					@include hover {
+						background: $success;
+					}
+				}
+				&.warning {
+					background: transparent;
+					border-color: $warning;
+					color: $warning;
+					@include hover {
+						background: $warning;
+					}
+				}
+				&.danger {
+					background: transparent;
+					border-color: $danger;
+					color: $danger;
+					@include hover {
+						background: $danger;
+					}
+				}
+			}
+		}
+	}
+	&.inverted {
+		background: $body-bg;
+		color: $body-color;
+		@include hover {
+			&:not([disabled]) {
+				background: darken($body-bg, 15%);
+			}
+		}
+		&.outlined {
+			background: transparent;
+			color: $body-bg;
+			border-color: $body-bg;
+			@include hover {
+				&:not([disabled]) {
+					background: $body-bg;
+					color: $body-color;
+				}
+			}
+		}
+	}
 }
 
-%button { @include button; }
+%button {
+	@include button;
+}
 
-@mixin buttons(){
-  button { @extend %button; }
-  @if $output-button-class {
-    .button {
-      @extend %button;
-      display: inline-block;
-      text-decoration: none;
-      &:not(.outlined) {
-        &:focus,
-        &:hover {
-          color: $body-bg;
-        }
-      }
-    }
-  }
-  @if $output-input-buttons-types {
-    input {
-      &[type=button],
-      &[type=submit],
-      &[type=reset] {
-        width: auto;
-        display: inline-block;
-        @extend %button;
-      }
-    }
-  }
+@mixin buttons() {
+	button {
+		@extend %button;
+	}
+	@if $output-button-class {
+		.button {
+			@extend %button;
+			display: inline-block;
+			text-decoration: none;
+			&:not(.outlined) {
+				&:focus,
+				&:hover {
+					color: $body-bg;
+				}
+			}
+		}
+	}
+	@if $output-input-buttons-types {
+		input {
+			&[type='button'],
+			&[type='submit'],
+			&[type='reset'] {
+				width: auto;
+				display: inline-block;
+				@extend %button;
+			}
+		}
+	}
 }
