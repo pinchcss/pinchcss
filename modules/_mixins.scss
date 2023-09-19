@@ -1,3 +1,5 @@
+@use 'sass:selector';
+
 @mixin print-styles($map) {
 	@each $property, $value in $map {
 		#{$property}: $value;
@@ -26,4 +28,17 @@
 		outline: 0;
 		@content;
 	}
+}
+
+@mixin where($selectors: '&') {
+	$parsed : str-replace($selectors, '&', &);
+	@debug $parsed;
+	$where: ":where(#{$parsed})";
+	@debug $where;
+
+  @at-root {
+		#{$where} {
+			@content;
+		}
+  }
 }

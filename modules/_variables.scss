@@ -1,13 +1,5 @@
 @use 'sass:math';
-$output-reboot: false !default; // you can switchoff reboot if you use something better
-
-$output-color-buttons: false !default; // more buttons colors
-$output-outlined-buttons: false !default;
-$output-input-buttons-types: false !default; // if you will use input[type=submit] and other
-$output-button-class: false !default; // if you want to style links like buttons
-
-$style-checkboxes: false !default;
-$style-select: false !default;
+$prefix: 'p-' !default;
 
 //
 // TYPOGRAPHY
@@ -113,3 +105,11 @@ $media-expressions: (
 	'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
 	'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
 );
+
+:root {
+	--#{$prefix}font-family: #{$font-family-sans-serif};
+	--#{$prefix}line-height: #{$line-height-base};
+	--#{$prefix}input-padding: #{$input-padding};
+	--#{$prefix}input-border-width: #{$input-border-width};
+	--#{$prefix}input-border-color: #{$input-border-color};
+}

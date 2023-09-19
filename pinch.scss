@@ -1,4 +1,6 @@
-@import 'common/output';
+@import 'modules/variables';
+@import 'modules/output';
+@import 'modules/reset';
 @import 'import';
 
 @include buttons();
