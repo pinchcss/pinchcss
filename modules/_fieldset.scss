@@ -1,7 +1,7 @@
 @mixin field {
 	margin: 0 0 1em;
 	label {
-		display: block;
+		vertical-align: top;
 	}
 	fieldset &:last-child {
 		margin-bottom: 0;

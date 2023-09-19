@@ -36,7 +36,7 @@ header {
 	letter-spacing: 0.1ex;
 	font-variant: small-caps;
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
-	margin-bottom: 0;
+	margin: 0;
 }
 
 .field {

@@ -1,12 +1,12 @@
 @import 'include-media/dist/include-media';
-@import 'common/variables';
-@import 'common/functions';
-@import 'common/mixins';
-@import 'common/reboot';
+@import 'modules/functions';
+@import 'modules/mixins';
+// @import 'common/reboot';
 
-@import 'elements/buttons';
-@import 'elements/common';
-@import 'elements/container';
-@import 'elements/fieldset';
-@import 'elements/grids';
-@import 'elements/inputs';
+@import 'modules/typography';
+@import 'modules/buttons';
+@import 'modules/common';
+@import 'modules/container';
+@import 'modules/fieldset';
+@import 'modules/grids';
+@import 'modules/inputs';
