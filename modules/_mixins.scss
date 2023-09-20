@@ -31,10 +31,10 @@
 }
 
 @mixin where($selectors: '&') {
-	$parsed : str-replace($selectors, '&', &);
-	$where: ":where(#{$parsed})";
+	$parsed: str-replace($selectors, '&', &);
+	$where: ':where(#{$parsed})';
 
-  @at-root #{$where} {
+	@at-root #{$where} {
 		@content;
-  }
+	}
 }
