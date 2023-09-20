@@ -1,25 +1,43 @@
 @mixin field {
-	margin: 0 0 1em;
-	label {
-		vertical-align: top;
+	:where(&) {
+		margin: 0 0 1em;
 	}
-	fieldset &:last-child {
+
+	:where(label) {
+		vertical-align: top;
+		display: inline-block;
+		margin: 0 0.25em 0.25em 0;
+
+		&:only-child {
+			margin: 0;
+		}
+	}
+
+	:where(&:last-child) {
 		margin-bottom: 0;
+	}
+
+	:where([type=checkbox i] + label, [type=radio i] + label){
+		display: inline;
+		margin: 0;
 	}
 }
 
 @mixin field-inline {
-	margin: 0 0 1em;
-	display: flex;
-	label {
+	:where(&) {
+		margin: 0 0 1em;
+		display: flex;
+	}
+
+	:where(label) {
 		margin: 0 0.5em 0 0;
 	}
-	input,
-	textarea,
-	select {
+
+	:where(input, textarea, select) {
 		flex-grow: 1;
 	}
-	fieldset &:last-child {
+
+	:where(&:last-child) {
 		margin-bottom: 0;
 	}
 }
@@ -32,7 +50,7 @@
 }
 
 @mixin fieldset {
-	legend {
+	:where(legend) {
 		padding: 0 0.25em;
 		margin-left: -0.25em;
 		vertical-align: top;
@@ -41,7 +59,7 @@
 		font-size: 1.2em;
 	}
 
-	fieldset {
+	:where(fieldset) {
 		border: $border-width $body-color solid;
 		border-radius: $border-radius;
 		padding: $gap * 0.46 $gap $gap;
