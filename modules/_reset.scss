@@ -168,7 +168,6 @@
 /* Forms
  * ========================================================================== */
 
-
 /**
  * Remove the margin on controls in Safari.
  */
@@ -179,7 +178,7 @@
 
 :where(:focus-visible) {
 	outline: solid 2px Highlight;
-  outline: auto 5px -webkit-focus-ring-color;
+	outline: auto 5px -webkit-focus-ring-color;
 }
 
 /**
@@ -204,7 +203,7 @@
 // confused and applies its very visible two-tone outline anyway.
 
 :where(button:focus:not(:focus-visible)) {
-  outline: 0;
+	outline: 0;
 }
 
 /**
@@ -238,16 +237,15 @@
  * 2. Correct the outline style in Safari.
  */
 
-:where([type=search i]) {
+:where([type='search' i]) {
 	-webkit-appearance: textfield; /* 1 */
 }
 
-@supports (-webkit-hyphens:none) {
-	[type=search i] {
+@supports (-webkit-hyphens: none) {
+	[type='search' i] {
 		outline-offset: -2px; /* 2 */
 	}
 }
-
 
 /**
  * Correct the cursor style of increment and decrement buttons in Safari.
@@ -331,9 +329,8 @@
  */
 
 :where(:-moz-ui-invalid) {
-  box-shadow: none;
+	box-shadow: none;
 }
-
 
 /* Interactive
  * ========================================================================== */

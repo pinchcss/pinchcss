@@ -1,12 +1,19 @@
 <script setup>
-import PageIndex from '@/components/PageIndex.vue';
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
 	<header>
-		<h1 class="brand-logo">Pinch Css Framework</h1>
+		<h1 class="brand-logo">🤌 Pinch Css Framework</h1>
 	</header>
-	<page-index />
+	<nav>
+		<RouterLink to="/">Typography</RouterLink>
+		<RouterLink to="/inputs">Inputs</RouterLink>
+		<RouterLink to="/buttons">Buttons</RouterLink>
+	</nav>
+	<div class="container">
+		<RouterView />
+	</div>
 </template>
 
 <style lang="scss">

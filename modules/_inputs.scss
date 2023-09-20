@@ -41,12 +41,11 @@ $radio-mark: (
 	}
 }
 
-
-:where(input:not([type=button i], [type=reset i], [type=submit i], [type=range i])) {
+:where(input:not([type='button' i], [type='reset' i], [type='submit' i], [type='range' i])) {
 	@extend %input;
 }
 
-:where([type=checkbox i], [type=radio i]) {
+:where([type='checkbox' i], [type='radio' i]) {
 	width: 1.5em;
 	height: 1.5em;
 	flex-shrink: 0;
@@ -63,7 +62,7 @@ $radio-mark: (
 		display: block;
 		content: '';
 		box-sizing: border-box;
-		transition: all .5s ease;
+		transition: all 0.5s ease;
 		position: absolute;
 		opacity: 0;
 	}
@@ -79,7 +78,7 @@ $radio-mark: (
 	}
 }
 
-:where(input[type=checkbox i]) {
+:where(input[type='checkbox' i]) {
 	&:after {
 		width: 10px;
 		height: 12px;
@@ -91,7 +90,7 @@ $radio-mark: (
 	}
 }
 
-:where(input[type=radio i]) {
+:where(input[type='radio' i]) {
 	border-radius: 50%;
 	&:after {
 		border-radius: 50%;
@@ -129,7 +128,7 @@ $radio-mark: (
 	}
 }
 
-:where([type=range i]) {
+:where([type='range' i]) {
 	appearance: none;
 	background: transparent;
 	cursor: pointer;
@@ -163,7 +162,7 @@ $radio-mark: (
 		height: 1.5em;
 		width: 1.5em;
 		transform: translateY(var(--#{$prefix}input-border-width));
-		margin-top: -.75em;
+		margin-top: -0.75em;
 	}
 
 	&:focus-visible::-webkit-slider-thumb {
