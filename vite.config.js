@@ -35,7 +35,6 @@ export default defineConfig(({ mode }) => {
 			emptyOutDir: isDoc,
 			cssCodeSplit: true,
 			copyPublicDir: isDoc,
-			cssMinify: 'lightningcss',
 			rollupOptions: {
 				output: {
 					assetFileNames: '[name].min.[ext]',
