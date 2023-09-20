@@ -41,148 +41,147 @@ $radio-mark: (
 	}
 }
 
-@mixin inputs {
-	:where(input:not([type=button i], [type=reset i], [type=submit i], [type=range i])) {
-		@extend %input;
-	}
 
-	:where([type=checkbox i], [type=radio i]) {
-		width: 1.5em;
-		height: 1.5em;
-		flex-shrink: 0;
-		min-height: 0;
-		padding: 0;
-		margin-inline-end: 0.25em;
-		display: inline-block;
-		appearance: none;
+:where(input:not([type=button i], [type=reset i], [type=submit i], [type=range i])) {
+	@extend %input;
+}
+
+:where([type=checkbox i], [type=radio i]) {
+	width: 1.5em;
+	height: 1.5em;
+	flex-shrink: 0;
+	min-height: 0;
+	padding: 0;
+	margin-inline-end: 0.25em;
+	display: inline-block;
+	appearance: none;
+	box-sizing: border-box;
+	vertical-align: top;
+	position: relative;
+
+	&:after {
+		display: block;
+		content: '';
 		box-sizing: border-box;
-		vertical-align: top;
-		position: relative;
+		transition: all .5s ease;
+		position: absolute;
+		opacity: 0;
+	}
 
+	&:checked {
 		&:after {
-			display: block;
-			content: '';
-			box-sizing: border-box;
-			transition: all .5s ease;
-			position: absolute;
-			opacity: 0;
-		}
-
-		&:checked {
-			&:after {
-				opacity: 1;
-			}
-		}
-
-		:where(label) & {
-			margin-inline-end: 0;
+			opacity: 1;
 		}
 	}
 
-	:where(input[type=checkbox i]) {
-		&:after {
-			width: 10px;
-			height: 12px;
-			border: solid var(--#{$prefix}input-border-color);
-			border-width: 0 2px 2px 0;
-			transform: rotate(45deg);
-			top: 2px;
-			left: 5px;
-		}
+	:where(label) & {
+		margin-inline-end: 0;
 	}
+}
 
-	:where(input[type=radio i]) {
+:where(input[type=checkbox i]) {
+	&:after {
+		width: 10px;
+		height: 12px;
+		border: solid var(--#{$prefix}input-border-color);
+		border-width: 0 2px 2px 0;
+		transform: rotate(45deg);
+		top: 2px;
+		left: 5px;
+	}
+}
+
+:where(input[type=radio i]) {
+	border-radius: 50%;
+	&:after {
 		border-radius: 50%;
-		&:after {
-			border-radius: 50%;
-			border: 6px solid var(--#{$prefix}input-border-color);
-			transform: translate(-50%, -50%);
-			top: 50%;
-			left: 50%;
-		}
+		border: 6px solid var(--#{$prefix}input-border-color);
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+	}
+}
+
+:where(textarea) {
+	@extend %input;
+	vertical-align: top;
+	max-width: 100%;
+}
+
+:where(select) {
+	@extend %input;
+	height: 2.5em;
+	appearance: none;
+
+	&::-ms-expand {
+		display: none;
 	}
 
-	:where(textarea) {
-		@extend %input;
-		vertical-align: top;
-		max-width: 100%;
+	$w: 24;
+	$fill: $input-border-color;
+	// https://pictogrammers.com/library/mdi/icon/unfold-more-horizontal/
+	$icon: '<svg xmlns="http://www.w3.org/2000/svg" width="#{em($w)}" height="#{em($w)}" viewBox="0 0 #{$w} #{$w}" fill="#{$fill}"><path d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" /></svg>';
+
+	padding-right: em($w);
+	background: url('data:image/svg+xml;utf8,#{svg-replace($icon)}') no-repeat right center;
+	&.placeholder {
+		color: rgba($body-color, 0.5);
+	}
+}
+
+:where([type=range i]) {
+	appearance: none;
+	background: transparent;
+	cursor: pointer;
+	width: 15rem;
+	vertical-align: middle;
+
+	&:focus-visible {
+		outline: 0;
 	}
 
-	:where(select) {
-		@extend %input;
-		height: 2.5em;
+	/* slider track */
+	&::-webkit-slider-runnable-track {
+		background-color: $input-border-color;
+		border-radius: $border-radius;
+		height: 0.2em;
+	}
+
+	&::-moz-range-track {
+		background-color: $input-border-color;
+		border-radius: $border-radius;
+		height: 0.2em;
+	}
+
+	/* slider thumb */
+	&::-webkit-slider-thumb {
+		box-sizing: border-box;
 		appearance: none;
-
-		&::-ms-expand {
-			display: none;
-		}
-
-		$w: 24;
-		$fill: $input-border-color;
-		// https://pictogrammers.com/library/mdi/icon/unfold-more-horizontal/
-		$icon: '<svg xmlns="http://www.w3.org/2000/svg" width="#{em($w)}" height="#{em($w)}" viewBox="0 0 #{$w} #{$w}" fill="#{$fill}"><path d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" /></svg>';
-
-		padding-right: em($w);
-		background: url('data:image/svg+xml;utf8,#{svg-replace($icon)}') no-repeat right center;
-		&.placeholder {
-			color: rgba($body-color, 0.5);
-		}
+		border-radius: 50%;
+		border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
+		background-color: white;
+		height: 1.5em;
+		width: 1.5em;
+		transform: translateY(var(--#{$prefix}input-border-width));
+		margin-top: -.75em;
 	}
 
-	:where([type=range i]) {
-		appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 15rem;
-		vertical-align: middle;
+	&:focus-visible::-webkit-slider-thumb {
+		outline: 2px solid $brand-main;
+		outline-offset: 1px;
+	}
 
-		&:focus-visible {
-			outline: 0;
-		}
+	&::-moz-range-thumb {
+		box-sizing: border-box;
+		border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
+		border-radius: 50%;
+		background-color: white;
+		height: 1.5em;
+		width: 1.5em;
+	}
 
-		/* slider track */
-		&::-webkit-slider-runnable-track {
-			background-color: $input-border-color;
-			border-radius: $border-radius;
-			height: 0.2em;
-	 	}
-
-		&::-moz-range-track {
-			background-color: $input-border-color;
-			border-radius: $border-radius;
-			height: 0.2em;
-		}
-
-		/* slider thumb */
-		&::-webkit-slider-thumb {
-			box-sizing: border-box;
-			appearance: none;
-			border-radius: 50%;
-			border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
-			background-color: white;
-			height: 1.5em;
-			width: 1.5em;
-			transform: translateY(var(--#{$prefix}input-border-width));
-			margin-top: -.75em;
-		}
-
-		&:focus-visible::-webkit-slider-thumb {
-			outline: 2px solid $brand-main;
-			outline-offset: 1px;
-		}
-
-		&::-moz-range-thumb {
-			box-sizing: border-box;
-			border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
-			border-radius: 50%;
-			background-color: white;
-			height: 1.5em;
-			width: 1.5em;
-	 	}
-
-		&:focus-visible::-moz-range-thumb {
-			outline: 2px solid $brand-main;
-			outline-offset: 1px;
-		}
+	&:focus-visible::-moz-range-thumb {
+		outline: 2px solid $brand-main;
+		outline-offset: 1px;
 	}
 }
