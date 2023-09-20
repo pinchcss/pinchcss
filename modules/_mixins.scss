@@ -32,13 +32,9 @@
 
 @mixin where($selectors: '&') {
 	$parsed : str-replace($selectors, '&', &);
-	@debug $parsed;
 	$where: ":where(#{$parsed})";
-	@debug $where;
 
-  @at-root {
-		#{$where} {
-			@content;
-		}
+  @at-root #{$where} {
+		@content;
   }
 }

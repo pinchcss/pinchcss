@@ -42,7 +42,7 @@ const fields = {
 		</p>
 		<p class="field" v-for="i in 2" :key="`checkbox-0-${i}`">
 			<input type="checkbox" :name="`checkbox-0-${i}`" :id="`checkbox-0-${i}`" />
-			<label :for="`checkbox-${i}`">Checkbox {{ i }}</label>
+			<label :for="`checkbox-0-${i}`">Checkbox {{ i }}</label>
 		</p>
 		<p class="field" v-for="i in 2" :key="`checkbox-1-${i}`">
 			<label :for="`checkbox-1-${i}`">
