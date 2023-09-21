@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
 :where(select) {
 	@extend %input;
 	height: 2.5em;

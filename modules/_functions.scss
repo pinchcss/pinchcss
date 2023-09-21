@@ -20,25 +20,10 @@
 	@return $string;
 }
 
-// Escape svg to make it work in Firefox(1) and MSIE(2)
+// Escape svg to make it work in Firefox
 
 @function svg-replace($string) {
-	$map: (
-		'#': '%23',
-		// 1
-		'<': '%3C',
-		// 2
-		'>': '%3E',
-		// 2
-		'"': "'",
-		// 2
-	);
-
-	@each $search, $replace in $map {
-		$string: str-replace($string, $search, $replace);
-	}
-
-	@return $string;
+	@return str-replace($string, '#', '%23');
 }
 
 @function strip-unit($number) {
@@ -49,10 +34,10 @@
 	@return $number;
 }
 
-@function rem($pixels, $context: $font-base) {
+@function rem($pixels, $context: 16) {
 	@return math.div(strip-unit($pixels), $context) * 1rem;
 }
 
-@function em($pixels, $context: $font-base) {
+@function em($pixels, $context: 16) {
 	@return math.div(strip-unit($pixels), $context) * 1em;
 }

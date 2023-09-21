@@ -1,11 +1,6 @@
 @use 'sass:math';
-
-$checkbox-input: (
-	width: 1em,
-	height: 1em,
-	border: $input-border-width solid $input-border-color,
-	border-radius: $input-border-radius,
-) !default;
+@use 'variables' as *;
+@use 'functions' as *;
 
 $checkbox-mark: (
 	width: em(6),

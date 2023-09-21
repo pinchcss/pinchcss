@@ -1,7 +1,8 @@
-@import 'include-media/dist/include-media';
-@import 'modules/mixins';
-// @import 'common/reboot';
+@forward 'modules/functions';
+@forward 'modules/variables';
+@forward 'modules/breakpoints';
 
+@import 'modules/mixins';
 @import 'modules/typography';
 @import 'modules/common';
 @import 'modules/container';

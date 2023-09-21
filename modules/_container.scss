@@ -1,6 +1,9 @@
+@use 'variables' as *;
+@use 'breakpoints' as bp;
+
 @mixin container {
 	margin: 0 $gap;
-	@include media('>=md') {
+	@include bp.media('>=md') {
 		margin: 0 $gap-md;
 	}
 }
@@ -9,7 +12,7 @@
 	margin: 0 (-$gap);
 	padding: 0 $gap;
 	box-sizing: border-box;
-	@include media('>=md') {
+	@include bp.media('>=md') {
 		padding: 0 $gap-md;
 		margin: 0 (-$gap-md);
 	}
@@ -17,7 +20,7 @@
 
 @mixin box {
 	padding: $gap;
-	@include media('>=md') {
+	@include bp.media('>=md') {
 		padding: $gap-md;
 	}
 }

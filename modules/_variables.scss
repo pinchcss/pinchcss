@@ -1,4 +1,6 @@
 @use 'sass:math';
+@use 'functions' as *;
+
 $prefix: 'p-' !default;
 
 //
@@ -75,46 +77,3 @@ $input-padding: em(6) em(12) !default; //0.375em 0.75em
 $button-padding: em(6) em(24) !default; //0.375em 1.5em
 $label-margin-bottom: 0.25em !default;
 $input-margin-bottom: 0.5em !default;
-
-//
-// MEDIAQUERIES
-//
-
-$sm: 30em; //480px
-$md: 48em; //768px
-$lg: 64em; //1024px
-
-$breakpoints: (
-	'sm': $sm,
-	'md': $md,
-	'lg': $lg,
-);
-
-$media-expressions: (
-	'screen': 'screen',
-	'print': 'print',
-	'touch': '(pointer: coarse)',
-	//https://www.w3.org/TR/mediaqueries-4/#pointer
-	'no-touch': '(pointer: fine)',
-	//https://www.w3.org/TR/mediaqueries-4/#pointer
-	'landscape': '(orientation: landscape)',
-	'portrait': '(orientation: portrait)',
-	'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
-	'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
-);
-
-:root {
-	--#{$prefix}font-family: #{$font-family-sans-serif};
-	--#{$prefix}line-height: #{$line-height-base};
-	--#{$prefix}input-padding: #{$input-padding};
-	--#{$prefix}input-border-width: #{$input-border-width};
-	--#{$prefix}input-border-color: #{$input-border-color};
-	--#{$prefix}button-padding: #{$button-padding};
-
-	--#{$prefix}default: #{$default};
-	--#{$prefix}primary: #{$primary};
-	--#{$prefix}info: #{$info};
-	--#{$prefix}success: #{$success};
-	--#{$prefix}warning: #{$warning};
-	--#{$prefix}danger: #{$danger};
-}
