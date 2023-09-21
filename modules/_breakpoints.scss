@@ -1,0 +1,29 @@
+$sm: 30em; //480px
+$md: 48em; //768px
+$lg: 64em; //1024px
+
+@use 'include-media/dist/include-media' as include-media with (
+	$breakpoints: (
+		'sm': $sm,
+		'md': $md,
+		'lg': $lg,
+	),
+	$media-expressions: (
+		'screen': 'screen',
+		'print': 'print',
+		'touch': '(pointer: coarse)',
+		//https://www.w3.org/TR/mediaqueries-4/#pointer
+		'no-touch': '(pointer: fine)',
+		//https://www.w3.org/TR/mediaqueries-4/#pointer
+		'landscape': '(orientation: landscape)',
+		'portrait': '(orientation: portrait)',
+		'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+		'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
+	)
+);
+
+@mixin media($mq) {
+	@include include-media.media($mq) {
+		@content;
+	}
+}

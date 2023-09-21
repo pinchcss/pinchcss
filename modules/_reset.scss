@@ -1,7 +1,10 @@
 /*
  * Forked from https://github.com/csstools/sanitize.css License CC0-1.0
  * Removed opinionated stuff
+ * Added some more
  */
+
+@use 'variables' as *;
 
 /* Document
  * ========================================================================== */
@@ -19,8 +22,8 @@
 	-webkit-text-size-adjust: 100%; /* 3 */
 	text-size-adjust: 100%; /* 3 */
 	font-size: 100%;
-	font-family: var(--#{$prefix}font-family);
-	line-height: var(--#{$prefix}line-height);
+	font-family: $font-family-sans-serif;
+	line-height: $line-height-base;
 }
 
 /* Sections
@@ -237,18 +240,11 @@
 }
 
 /**
- * 1. Correct the odd appearance in Chrome, Edge, and Safari.
- * 2. Correct the outline style in Safari.
+ * Correct the odd appearance in Chrome, Edge, and Safari.
  */
 
 :where([type='search' i]) {
-	-webkit-appearance: none; /* 1 */
-}
-
-@supports (-webkit-hyphens: none) {
-	[type='search' i] {
-		outline-offset: -2px; /* 2 */
-	}
+	-webkit-appearance: none;
 }
 
 /**

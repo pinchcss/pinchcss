@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
 @mixin button {
 	--color: #{$body-bg};
 	--background: var(--p-default);
@@ -97,19 +100,17 @@
 	@include button;
 }
 
-@mixin buttons() {
-	:where(button, .button, [type='button' i], [type='reset' i], [type='submit' i]) {
-		@extend %button;
-	}
+:where(button, .button, [type='button' i], [type='reset' i], [type='submit' i]) {
+	@extend %button;
+}
 
-	:where(.button) {
-		display: inline-block;
-		text-decoration: none;
-		&:not(.outlined):not(.inverted) {
-			&:focus,
-			&:hover {
-				color: $body-bg;
-			}
+:where(.button) {
+	display: inline-block;
+	text-decoration: none;
+	&:not(.outlined):not(.inverted) {
+		&:focus,
+		&:hover {
+			color: $body-bg;
 		}
 	}
 }

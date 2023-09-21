@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 %a {
 	color: $link-color;
 	text-decoration: $link-decoration;
@@ -6,4 +8,20 @@
 		color: $link-hover-color;
 		text-decoration: $link-hover-decoration;
 	}
+}
+
+:root {
+	--#{$prefix}font-family: #{$font-family-sans-serif};
+	--#{$prefix}line-height: #{$line-height-base};
+	--#{$prefix}input-padding: #{$input-padding};
+	--#{$prefix}input-border-width: #{$input-border-width};
+	--#{$prefix}input-border-color: #{$input-border-color};
+	--#{$prefix}button-padding: #{$button-padding};
+
+	--#{$prefix}default: #{$default};
+	--#{$prefix}primary: #{$primary};
+	--#{$prefix}info: #{$info};
+	--#{$prefix}success: #{$success};
+	--#{$prefix}warning: #{$warning};
+	--#{$prefix}danger: #{$danger};
 }

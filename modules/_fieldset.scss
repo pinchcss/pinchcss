@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 @mixin field {
 	:where(&) {
 		margin: 0 0 1em;
