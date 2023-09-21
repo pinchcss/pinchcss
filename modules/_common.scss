@@ -2,10 +2,8 @@
 	color: $link-color;
 	text-decoration: $link-decoration;
 	transition: color 0.5s;
-	// &:not([disabled]) {
-		@include hover {
-			color: $link-hover-color;
-			text-decoration: $link-hover-decoration;
-		}
-	// }
+	@include hover {
+		color: $link-hover-color;
+		text-decoration: $link-hover-decoration;
+	}
 }
