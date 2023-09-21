@@ -1,136 +1,92 @@
 @mixin button {
+	--color: #{$body-bg};
+	--background: var(--p-default);
+	color: var(--color);
+	background: var(--background);
 	box-sizing: border-box;
 	min-height: 2.5em;
-	line-height: 1.5;
+	padding: em(6) em(24);
 	border: $input-border-width transparent solid;
 	border-radius: $input-border-radius;
-	background: $default;
 	font-weight: 500;
 	text-align: center;
-	color: $body-bg;
 	cursor: pointer;
 	transition: all 0.5s ease;
-	padding: em(6) em(24);
 	margin-bottom: $input-margin-bottom;
 	user-select: none;
 	transition: all 0.5s ease;
-	@include hover {
-		box-shadow: inset 0 0 0 99px rgba(0, 0, 0, 0.3);
+
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0px 0px 0px 2px $primary;
 	}
+
+	&:hover {
+		box-shadow: inset 0 0 0 9em rgba(255, 255, 255, 0.5);
+	}
+
 	&:active {
 		transform: scale(0.95);
 	}
+
 	&[disabled] {
-		opacity: 0.4;
+		opacity: 0.5;
 		cursor: not-allowed;
 		box-shadow: none !important;
 		transform: none !important;
 	}
-	&.primary {
-		background: $primary;
-	}
-	&.link {
-		padding: 0;
-		min-height: 0;
-		line-height: inherit;
-		background: none !important;
-		box-shadow: none;
-		font: inherit;
-		@extend %a;
+
+	:where(&.primary) {
+		--background: var(--p-primary);
 	}
 
-	@if $output-color-buttons {
-		&.info {
-			background: $info;
-			@include hover {
-				box-shadow: inset 0 0 0 99px rgba(255, 255, 255, 0.2);
+	:where(&.info) {
+		--background: var(--p-info);
+	}
+
+	:where(&.success) {
+		--background: var(--p-success);
+	}
+
+	:where(&.warning) {
+		--background: var(--p-warning);
+	}
+
+	:where(&.danger) {
+		--background: var(--p-danger);
+	}
+
+	:where(&.outlined) {
+		background: transparent;
+		border-color: var(--background);
+		color: var(--background);
+		&:hover {
+			&:not([disabled]) {
+				background: var(--background);
+				color: $body-bg;
 			}
 		}
-		&.success {
-			background: $success;
-		}
-		&.warning {
-			background: $warning;
-		}
-		&.danger {
-			background: $danger;
+		&[disabled] {
+			background: transparent !important;
 		}
 	}
-	@if $output-outlined-buttons {
-		&.outlined {
-			background: transparent;
-			border-color: $default;
-			color: $default;
-			@include hover {
-				&:not([disabled]) {
-					background: $default;
-					color: $body-bg;
-					box-shadow: none;
-				}
-			}
-			&[disabled] {
-				background: transparent !important;
-			}
-			&.primary {
-				background: transparent;
-				border-color: $primary;
-				color: $primary;
-				@include hover {
-					background: $primary;
-				}
-			}
-			@if $output-color-buttons {
-				&.info {
-					background: transparent;
-					border-color: $info;
-					color: $info;
-					@include hover {
-						background: $info;
-					}
-				}
-				&.success {
-					background: transparent;
-					border-color: $success;
-					color: $success;
-					@include hover {
-						background: $success;
-					}
-				}
-				&.warning {
-					background: transparent;
-					border-color: $warning;
-					color: $warning;
-					@include hover {
-						background: $warning;
-					}
-				}
-				&.danger {
-					background: transparent;
-					border-color: $danger;
-					color: $danger;
-					@include hover {
-						background: $danger;
-					}
-				}
-			}
-		}
-	}
-	&.inverted {
-		background: $body-bg;
-		color: $body-color;
-		@include hover {
+
+	:where(&.inverted) {
+		--color: #{$body-color};
+		--background: #{$body-bg};
+		&:hover {
 			&:not([disabled]) {
 				background: darken($body-bg, 15%);
 			}
 		}
 		&.outlined {
 			background: transparent;
-			color: $body-bg;
-			border-color: $body-bg;
-			@include hover {
+			color: var(--background);
+			border-color: var(--background);
+			&:hover {
 				&:not([disabled]) {
-					background: $body-bg;
-					color: $body-color;
+					background: var(--background);
+					color: var(--color);
 				}
 			}
 		}
@@ -142,31 +98,28 @@
 }
 
 @mixin buttons() {
-	button {
+	:where(button, .button, [type='button' i], [type='reset' i], [type='submit' i]) {
 		@extend %button;
 	}
-	@if $output-button-class {
-		.button {
-			@extend %button;
-			display: inline-block;
-			text-decoration: none;
-			&:not(.outlined) {
-				&:focus,
-				&:hover {
-					color: $body-bg;
-				}
+
+	:where(.button) {
+		display: inline-block;
+		text-decoration: none;
+		&:not(.outlined):not(.inverted) {
+			&:focus,
+			&:hover {
+				color: $body-bg;
 			}
 		}
 	}
-	@if $output-input-buttons-types {
-		input {
-			&[type='button'],
-			&[type='submit'],
-			&[type='reset'] {
-				width: auto;
-				display: inline-block;
-				@extend %button;
-			}
-		}
-	}
+}
+
+.link {
+	padding: 0;
+	min-height: 0;
+	line-height: inherit;
+	background: none;
+	box-shadow: none;
+	font: inherit;
+	@extend %a;
 }

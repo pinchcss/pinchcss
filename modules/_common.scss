@@ -1,9 +1,11 @@
 %a {
 	color: $link-color;
 	text-decoration: $link-decoration;
-	transition: all 0.5s;
-	@include hover {
-		color: $link-hover-color;
-		text-decoration: $link-hover-decoration;
-	}
+	transition: color 0.5s;
+	// &:not([disabled]) {
+		@include hover {
+			color: $link-hover-color;
+			text-decoration: $link-hover-decoration;
+		}
+	// }
 }
