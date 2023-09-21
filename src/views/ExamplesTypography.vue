@@ -12,6 +12,7 @@
 		</p>
 		<p>
 			<a href="#">Link</a>
+			lorem
 			<button class="link">Button</button>
 		</p>
 		<div class="grid">

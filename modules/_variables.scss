@@ -9,7 +9,7 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
 
 $font-base: 16 !default;
-$font-size-base: math.div($font-base, 16) * 1rem !default;
+$font-size-base: 1rem !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $line-height-base: 1.5 !default;
@@ -17,9 +17,9 @@ $font-weight-base: 400 !default;
 
 $dt-font-weight: 500 !default;
 
-$headings-margin-bottom: math.div($font-base, 16) * 1rem !default;
 $headings-font-weight: 700 !default;
-$paragraph-margin-bottom: math.div($font-base, 16) * 1rem !default;
+$headings-margin-bottom: 1rem !default;
+$paragraph-margin-bottom: 1rem !default;
 
 //
 // COLORS
@@ -49,7 +49,7 @@ $link-decoration: underline;
 $link-hover-color: lighten($brand-main, 15%);
 $link-hover-decoration: none;
 
-$default: $color-midgray;
+$default: $color-midgray !default;
 $primary: $brand-main !default;
 $info: $dark-shades !default;
 $success: $color-green !default;
@@ -62,8 +62,8 @@ $body-bg: $light-shades !default;
 $gap: 1em !default;
 $gap-md: 1.5em !default;
 
-$border-width: math.div(2, $font-base) * 1em !default;
-$border-radius: math.div(5, $font-base) * 1em !default;
+$border-width: em(2) !default;
+$border-radius: em(6) !default;
 
 //
 // FORMS
@@ -71,13 +71,11 @@ $border-radius: math.div(5, $font-base) * 1em !default;
 $input-border-color: $color-darkgray !default;
 $input-border-width: $border-width !default;
 $input-border-radius: $border-radius !default;
-$input-padding: math.div(6, $font-base) * 1em math.div(12, $font-base) * 1em;
-$button-padding: math.div(6, $font-base) * 1em math.div(24, $font-base) * 1em;
+$input-padding: em(6) em(12) !default; 	//0.375em 0.75em
+$button-padding: em(6) em(24) !default; //0.375em 1.5em
 $label-margin-bottom: 0.25em !default;
 $input-margin-bottom: 0.5em !default;
 
-$table-cell-padding: 0.75rem !default;
-$table-caption-color: inherit !default;
 
 //
 // MEDIAQUERIES
@@ -112,5 +110,12 @@ $media-expressions: (
 	--#{$prefix}input-padding: #{$input-padding};
 	--#{$prefix}input-border-width: #{$input-border-width};
 	--#{$prefix}input-border-color: #{$input-border-color};
+	--#{$prefix}button-padding: #{$button-padding};
+
+	--#{$prefix}default: #{$default};
+	--#{$prefix}primary: #{$primary};
+	--#{$prefix}info: #{$info};
+	--#{$prefix}success: #{$success};
+	--#{$prefix}warning: #{$warning};
 	--#{$prefix}danger: #{$danger};
 }

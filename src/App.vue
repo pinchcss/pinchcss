@@ -46,6 +46,21 @@ header {
 	margin: 0;
 }
 
+nav {
+	display: flex;
+	margin-bottom: 1em;
+
+	> a {
+		flex: auto;
+		text-align: center;
+	}
+
+	.router-link-active {
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
 .field {
 	@extend %field;
 }

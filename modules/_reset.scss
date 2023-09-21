@@ -206,6 +206,10 @@
 	outline: 0;
 }
 
+:where(input[type=button]:not([value])) {
+	vertical-align: top;
+}
+
 /**
  * Change the inconsistent appearance in all browsers (opinionated).
  */
@@ -238,7 +242,7 @@
  */
 
 :where([type='search' i]) {
-	-webkit-appearance: textfield; /* 1 */
+	-webkit-appearance: none; /* 1 */
 }
 
 @supports (-webkit-hyphens: none) {
