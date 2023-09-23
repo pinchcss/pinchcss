@@ -34,8 +34,12 @@ export default defineConfig(({ mode }) => {
 			outDir: isDoc ? './docs' : '.',
 			emptyOutDir: isDoc,
 			cssCodeSplit: true,
-			copyPublicDir: isDoc,
-			rollupOptions: {
+			rollupOptions: isDoc ? {
+				input: {
+					index: resolve(__dirname, 'index.html'),
+					router: resolve(__dirname, '404.html'),
+				}
+			} : {
 				output: {
 					assetFileNames: '[name].min.[ext]',
 				},
