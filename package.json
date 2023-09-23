@@ -1,12 +1,12 @@
 {
 	"name": "pinchcss",
-	"version": "0.1.0",
+	"version": "0.1.1-0",
 	"description": "[WORK IN PROGRESS] Pinchcss micro css framework",
 	"author": "Eugene Tereshchenko <i@jman.info>",
 	"license": "MIT",
 	"type": "module",
 	"sass": "pinch.scss",
-  "style": "pinch.min.css",
+	"style": "pinch.min.css",
 	"engines": {
 		"node": ">= 18.0.0",
 		"pnpm": ">= 8.0.0"
