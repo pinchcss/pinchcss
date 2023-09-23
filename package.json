@@ -5,6 +5,8 @@
 	"author": "Eugene Tereshchenko <i@jman.info>",
 	"license": "MIT",
 	"type": "module",
+	"sass": "pinch.scss",
+  "style": "pinch.min.css",
 	"engines": {
 		"node": ">= 18.0.0",
 		"pnpm": ">= 8.0.0"
