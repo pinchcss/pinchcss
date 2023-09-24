@@ -11,13 +11,21 @@
 }
 
 :root {
+	// typography
 	--#{$prefix}font-family: #{$font-family-sans-serif};
 	--#{$prefix}line-height: #{$line-height-base};
-	--#{$prefix}input-padding: #{$input-padding};
-	--#{$prefix}input-border-width: #{$input-border-width};
+
+	// forms
 	--#{$prefix}input-border-color: #{$input-border-color};
+	--#{$prefix}button-border-color: #{$button-border-color};
+	--#{$prefix}input-border-width: #{$input-border-width};
+	--#{$prefix}button-border-width: #{$button-border-width};
+	--#{$prefix}input-border-radius: #{$input-border-radius};
+	--#{$prefix}button-border-radius: #{$button-border-radius};
+	--#{$prefix}input-padding: #{$input-padding};
 	--#{$prefix}button-padding: #{$button-padding};
 
+	// colors
 	--#{$prefix}default: #{$default};
 	--#{$prefix}primary: #{$primary};
 	--#{$prefix}info: #{$info};

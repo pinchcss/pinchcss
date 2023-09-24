@@ -9,19 +9,19 @@
 	box-sizing: border-box;
 	min-height: 2.5em;
 	padding: em(6) em(24);
-	border: $input-border-width transparent solid;
-	border-radius: $input-border-radius;
+	border: var(--#{$prefix}button-border-width) var(--#{$prefix}button-border-color) solid;
+	border-radius: var(--#{$prefix}button-border-radius);
 	font-weight: 500;
 	text-align: center;
 	cursor: pointer;
 	transition: all 0.5s ease;
-	margin-bottom: $input-margin-bottom;
+	margin-bottom: 0.5ex;
 	user-select: none;
 	transition: all 0.5s ease;
 
 	&:focus-visible {
-		outline: none;
-		box-shadow: 0px 0px 0px 2px $primary;
+		outline: 2px solid $brand-main;
+		outline-offset: 1px;
 	}
 
 	&:hover {
@@ -100,27 +100,26 @@
 	@include button;
 }
 
-:where(button, .button, [type='button' i], [type='reset' i], [type='submit' i]) {
+:where(button, [type='button' i], [type='reset' i], [type='submit' i]) {
 	@extend %button;
 }
 
-:where(.button) {
+:where([role='button']) {
+	@extend %button;
 	display: inline-block;
 	text-decoration: none;
 	&:not(.outlined):not(.inverted) {
-		&:focus,
-		&:hover {
+		@include hover {
 			color: $body-bg;
 		}
 	}
 }
 
-.link {
-	padding: 0;
-	min-height: 0;
-	line-height: inherit;
-	background: none;
-	box-shadow: none;
-	font: inherit;
+[role='link'] {
 	@extend %a;
+
+	:where(&) {
+		all: unset;
+		display: inline;
+	}
 }

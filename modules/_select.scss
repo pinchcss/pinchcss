@@ -13,10 +13,11 @@
 	$w: 24;
 	$fill: $input-border-color;
 	// https://pictogrammers.com/library/mdi/icon/unfold-more-horizontal/
-	$icon: '<svg xmlns="http://www.w3.org/2000/svg" width="#{em($w)}" height="#{em($w)}" viewBox="0 0 #{$w} #{$w}" fill="#{$fill}"><path d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" /></svg>';
+	$icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$w} #{$w}" fill="#{$fill}"><path d="#{$mdi-unfold-more-horizontal}" /></svg>';
 
 	padding-right: em($w);
-	background: url('data:image/svg+xml;utf8,#{svg-replace($icon)}') no-repeat right center;
+	background: url('data:image/svg+xml;utf8,#{svg-replace($icon)}') no-repeat right center / em($w);
+
 	&.placeholder {
 		color: rgba($body-color, 0.5);
 	}
