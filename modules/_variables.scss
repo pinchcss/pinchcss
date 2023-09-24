@@ -71,9 +71,19 @@ $border-radius: em(6) !default;
 // FORMS
 //
 $input-border-color: $color-darkgray !default;
+$button-border-color: transparent !default;
 $input-border-width: $border-width !default;
+$button-border-width: $border-width !default;
 $input-border-radius: $border-radius !default;
+$button-border-radius: $border-radius !default;
 $input-padding: em(6) em(12) !default; //0.375em 0.75em
 $button-padding: em(6) em(24) !default; //0.375em 1.5em
 $label-margin-bottom: 0.25em !default;
 $input-margin-bottom: 0.5em !default;
+
+//
+// ICONS
+//
+
+// 󰕏 https://pictogrammers.com/library/mdi/icon/unfold-more-horizontal/
+$mdi-unfold-more-horizontal: 'M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z';

@@ -2,34 +2,18 @@
 @use 'variables' as *;
 @use 'functions' as *;
 
-$checkbox-mark: (
-	width: em(6),
-	height: em(8),
-	border: solid $input-border-color,
-	border-width: 0 em(2) em(2) 0,
-	transform: rotate(45deg) translate(-50%, -50%),
-	transform-origin: 50% 40%,
-) !default;
-
-$radio-mark: (
-	width: em(6),
-	height: em(6),
-	background: $input-border-color,
-	transform: translate(-50%, -50%),
-	border-radius: 50%,
-) !default;
-
 %input {
 	box-sizing: border-box;
 	min-height: 2.5em;
 	line-height: 1.5;
 	background: transparent;
 	border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
-	border-radius: $input-border-radius;
+	border-radius: var(--#{$prefix}input-border-radius);
 	padding: var(--#{$prefix}input-padding);
 	display: block;
 	width: 100%;
 	transition: all 0.1s ease;
+
 	&:focus-visible {
 		outline: 2px solid $brand-main;
 		outline-offset: 1px;

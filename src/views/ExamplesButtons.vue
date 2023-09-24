@@ -51,18 +51,19 @@ const colors = {
 		</p>
 
 		<p class="box inverted">
-			<button class="inverted">Inverted</button>{{ '&#32;' }} <button class="inverted outlined">Outlined</button
-			>{{ '&#32;' }} <a @click.prevent class="button inverted" href="#">Inverted</a>{{ '&#32;' }}
-			<a @click.prevent class="button inverted outlined" href="#">Outlined</a>{{ '&#32;' }}
+			<button class="inverted">Inverted</button>{{ '&#32;' }}
+			<button class="inverted outlined">Outlined</button>{{ '&#32;' }}
+			<a @click.prevent class="inverted" role="button" href="#">Inverted</a>{{ '&#32;' }}
+			<a @click.prevent class="inverted outlined" role="button" href="#">Outlined</a>{{ '&#32;' }}
 			<button class="inverted" disabled>Inverted</button>{{ '&#32;' }}
-			<a class="button inverted outlined" href="#" disabled>Outlined</a>{{ '&#32;' }}
+			<a class="inverted outlined" role="button" href="#" disabled>Outlined</a>{{ '&#32;' }}
 		</p>
 
 		<p>
 			<template v-for="(title, key, i) in colors" :key="key">
 				<a
 					href="#"
-					class="button"
+					role="button"
 					@click.prevent
 					:disabled="(i + 1) % 3 === 0"
 					:class="[key === 'default' ? '' : key, i % 2 !== 0 ? 'outlined' : '']"
