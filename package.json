@@ -7,6 +7,11 @@
 	"type": "module",
 	"sass": "pinch.scss",
 	"style": "pinch.min.css",
+	"files": [
+		"modules/",
+		"*.css",
+		"*.scss"
+	],
 	"engines": {
 		"node": ">= 18.0.0",
 		"pnpm": ">= 8.0.0"
@@ -40,11 +45,5 @@
 		"vite": "^4.4.9",
 		"vue": "^3.3.4",
 		"vue-router": "^4.2.4"
-	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"Firefox ESR",
-		"not dead"
-	]
+	}
 }
