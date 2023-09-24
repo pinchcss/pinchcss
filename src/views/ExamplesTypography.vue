@@ -13,7 +13,7 @@
 		<p>
 			<a href="#">Link</a>
 			lorem
-			<button class="link">Button</button>
+			<button role="link" onclick="alert(1)">Button</button>
 		</p>
 		<div class="grid">
 			<div class="col">
