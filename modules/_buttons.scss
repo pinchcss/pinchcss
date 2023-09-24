@@ -35,6 +35,7 @@
 	&[disabled] {
 		opacity: 0.5;
 		cursor: not-allowed;
+		pointer-events: none;
 		box-shadow: none !important;
 		transform: none !important;
 	}
@@ -100,7 +101,7 @@
 	@include button;
 }
 
-:where(button, [type='button' i], [type='reset' i], [type='submit' i]) {
+:where(button:not([role='link']), [type='button' i], [type='reset' i], [type='submit' i]) {
 	@extend %button;
 }
 
@@ -109,17 +110,15 @@
 	display: inline-block;
 	text-decoration: none;
 	&:not(.outlined):not(.inverted) {
-		@include hover {
-			color: $body-bg;
-		}
+		color: $body-bg;
 	}
 }
 
-[role='link'] {
+:where([role='link']) {
 	@extend %a;
-
-	:where(&) {
-		all: unset;
-		display: inline;
-	}
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	display: inline;
 }
