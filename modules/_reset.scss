@@ -5,6 +5,7 @@
  */
 
 @use 'variables' as *;
+@use 'breakpoints' as bp;
 
 /* Document
  * ========================================================================== */
@@ -407,7 +408,7 @@
  * 4. Remove transitions when motion is reduced (opinionated).
  */
 
-@media (prefers-reduced-motion: reduce) {
+@include bp.media('reduced-motion') {
 	*,
 	::before,
 	::after {
