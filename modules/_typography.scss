@@ -7,6 +7,6 @@
 	}
 }
 
-:where(a:not(.button)) {
+:where(a:not([role='button'])) {
 	@extend %a;
 }
