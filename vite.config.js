@@ -34,6 +34,7 @@ export default defineConfig(({ mode }) => {
 			outDir: isDoc ? './docs' : '.',
 			emptyOutDir: isDoc,
 			cssCodeSplit: true,
+			cssMinify: 'lightningcss',
 			rollupOptions: isDoc
 				? {
 						input: {
