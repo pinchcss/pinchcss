@@ -1,0 +1,26 @@
+@use '../variables' with (
+	// pampas
+	$light-shades: rgb(248, 247, 246),
+	// half baked
+	$light-accent: rgb(124, 177, 209),
+	// san marino
+	// $brand-main-hex: #3f69b1,
+	$brand-main: rgb(63, 105, 177),
+	// waterloo
+	$dark-accent: rgb(132, 124, 152),
+	// mirage
+	// $dark-shades-hex: #1d243e,
+	$dark-shades: rgb(29, 36, 62),
+	// $dark-hex: #0e101a,
+	$dark: rgb(14, 16, 26),
+	// fruit salad
+	// $color-green-hex: #489a6d,
+	$color-green: rgb(74, 154, 103),
+	// brandy punch
+	// $color-yellow-hex: #c58a35,
+	$color-yellow: rgb(199, 138, 47),
+	// pomegranate
+	// $color-red-hex: #f44336,
+	$color-red: rgb(244, 67, 54),
+	$default: rgb(132, 124, 152)
+);
