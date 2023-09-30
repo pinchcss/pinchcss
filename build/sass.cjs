@@ -71,6 +71,7 @@ async function compileCss() {
 			});
 			await logSize(code, 'new:');
 			writeFile(`${file}.min.css`, code);
+			writeFile(`${file}.css`, css);
 			console.log('');
 		} catch (err) {
 			console.error(err);
