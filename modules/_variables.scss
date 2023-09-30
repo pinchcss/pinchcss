@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use 'functions' as *;
 
-$prefix: 'p-' !default;
+$prefix: 'p' !default;
 
 //
 // TYPOGRAPHY
@@ -40,6 +40,7 @@ $color-yellow: #be923e !default;
 $color-red: #f44336 !default;
 
 $color-grey: #313439 !default;
+$color-white: #fff !default;
 
 $default: #676b72 !default;
 $primary: $brand-main !default;
@@ -73,6 +74,7 @@ $input-border-radius: $border-radius !default;
 $button-border-radius: $border-radius !default;
 $input-padding: em(6) em(12) !default; //0.375em 0.75em
 $button-padding: em(6) em(24) !default; //0.375em 1.5em
+$button-color: $color-white;
 $label-margin-bottom: em(4) !default;
 $input-margin-bottom: em(8) !default;
 

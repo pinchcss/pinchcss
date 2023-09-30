@@ -1,39 +1,55 @@
 @use 'sass:meta';
 @use 'variables' as *;
 
+:root {
+	// typography
+	--#{$prefix}-font-family: #{meta.inspect($font-family-base)};
+	--#{$prefix}-line-height: #{$line-height-base};
+
+	// forms
+	--#{$prefix}-input-border-color: #{$input-border-color};
+	--#{$prefix}-button-border-color: #{$button-border-color};
+	--#{$prefix}-input-border-width: #{$input-border-width};
+	--#{$prefix}-button-border-width: #{$button-border-width};
+	--#{$prefix}-input-border-radius: #{$input-border-radius};
+	--#{$prefix}-button-border-radius: #{$button-border-radius};
+	--#{$prefix}-input-padding: #{$input-padding};
+	--#{$prefix}-button-padding: #{$button-padding};
+	--#{$prefix}-button-color: #{$button-color};
+
+	// colors
+	--#{$prefix}-default: #{$default};
+	--#{$prefix}-primary: #{$primary};
+	--#{$prefix}-info: #{$info};
+	--#{$prefix}-success: #{$success};
+	--#{$prefix}-warning: #{$warning};
+	--#{$prefix}-danger: #{$danger};
+	--#{$prefix}-link-color: #{$link-color};
+	--#{$prefix}-link-hover-color: #{$link-hover-color};
+}
+
+
 %a {
 	:where(&) {
-		color: $link-color;
+		color: var(--#{$prefix}-link-color);
 		text-decoration: $link-decoration;
 		transition: color 0.5s;
 
 		@include hover {
-			color: $link-hover-color;
+			color: var(--#{$prefix}-link-hover-color);
 			text-decoration: $link-hover-decoration;
 		}
 	}
 }
 
-:root {
-	// typography
-	--#{$prefix}font-family: #{meta.inspect($font-family-base)};
-	--#{$prefix}line-height: #{$line-height-base};
+[role='link'] {
+	@extend %a;
 
-	// forms
-	--#{$prefix}input-border-color: #{$input-border-color};
-	--#{$prefix}button-border-color: #{$button-border-color};
-	--#{$prefix}input-border-width: #{$input-border-width};
-	--#{$prefix}button-border-width: #{$button-border-width};
-	--#{$prefix}input-border-radius: #{$input-border-radius};
-	--#{$prefix}button-border-radius: #{$button-border-radius};
-	--#{$prefix}input-padding: #{$input-padding};
-	--#{$prefix}button-padding: #{$button-padding};
-
-	// colors
-	--#{$prefix}default: #{$default};
-	--#{$prefix}primary: #{$primary};
-	--#{$prefix}info: #{$info};
-	--#{$prefix}success: #{$success};
-	--#{$prefix}warning: #{$warning};
-	--#{$prefix}danger: #{$danger};
+	:where(&) {
+		background: none;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		display: inline;
+	}
 }
