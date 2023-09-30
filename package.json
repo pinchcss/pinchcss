@@ -20,6 +20,7 @@
 		"preinstall": "npx only-allow pnpm",
 		"start": "pnpm run dev",
 		"dev": "vite --host",
+		"prebuild": "pnpm run \"/lint|format/\"",
 		"build": "node build/sass.cjs",
 		"doc:build": "vite build --mode documentation",
 		"doc:preview": "vite preview --mode documentation",

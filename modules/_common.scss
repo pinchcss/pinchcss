@@ -2,12 +2,15 @@
 @use 'variables' as *;
 
 %a {
-	color: $link-color;
-	text-decoration: $link-decoration;
-	transition: color 0.5s;
-	@include hover {
-		color: $link-hover-color;
-		text-decoration: $link-hover-decoration;
+	:where(&) {
+		color: $link-color;
+		text-decoration: $link-decoration;
+		transition: color 0.5s;
+
+		@include hover {
+			color: $link-hover-color;
+			text-decoration: $link-hover-decoration;
+		}
 	}
 }
 

@@ -40,27 +40,27 @@
 		transform: none !important;
 	}
 
-	:where(&.primary) {
+	&.primary {
 		--background: var(--p-primary);
 	}
 
-	:where(&.info) {
+	&.info {
 		--background: var(--p-info);
 	}
 
-	:where(&.success) {
+	&.success {
 		--background: var(--p-success);
 	}
 
-	:where(&.warning) {
+	&.warning {
 		--background: var(--p-warning);
 	}
 
-	:where(&.danger) {
+	&.danger {
 		--background: var(--p-danger);
 	}
 
-	:where(&.outlined) {
+	&.outlined {
 		background: transparent;
 		border-color: var(--background);
 		color: var(--background);
@@ -75,7 +75,7 @@
 		}
 	}
 
-	:where(&.inverted) {
+	&.inverted {
 		--color: #{$body-color};
 		--background: #{$body-bg};
 		&:hover {
@@ -103,15 +103,22 @@
 	}
 }
 
-:where(button:not([role='link']), [type='button' i], [type='reset' i], [type='submit' i]) {
+button:not([role='link']),
+[type='button' i],
+[type='reset' i],
+[type='submit' i] {
 	@extend %button;
 }
 
-:where([role='button']) {
+[role='button'] {
 	@extend %button;
-	display: inline-block;
-	text-decoration: none;
-	&:not(.outlined, .inverted) {
+
+	:where(&) {
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	:where(&:not(.outlined, .inverted)) {
 		color: $body-bg;
 	}
 }
