@@ -366,6 +366,8 @@
   }
 }
 :where(:root) {
+  color: var(--p-color);
+  background: var(--p-bg);
   font-family: var(--p-font-family);
   line-height: var(--p-line-height);
 }
@@ -374,34 +376,23 @@
   margin: 0 0 1rem;
 }
 
-:where([role=link], a:not([role=button])) {
-  color: #2585ce;
+:where(a:not([role=button]), [role=link]) {
+  color: var(--p-link-color);
   text-decoration: underline;
   transition: color 0.5s;
 }
-:where([role=link], a:not([role=button])):focus, :where([role=link], a:not([role=button])):hover {
+:where(a:not([role=button]), [role=link]):focus, :where(a:not([role=button]), [role=link]):hover {
   outline: 0;
-  color: #5ea9e2;
+  color: var(--p-link-hover-color);
   text-decoration: none;
 }
 
-:root {
-  --p-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --p-line-height: 1.5;
-  --p-input-border-color: #313439;
-  --p-button-border-color: transparent;
-  --p-input-border-width: 0.125em;
-  --p-button-border-width: 0.125em;
-  --p-input-border-radius: 0.375em;
-  --p-button-border-radius: 0.375em;
-  --p-input-padding: 0.375em 0.75em;
-  --p-button-padding: 0.375em 1.5em;
-  --p-default: #676b72;
-  --p-primary: #2585ce;
-  --p-info: #162a6a;
-  --p-success: #40a276;
-  --p-warning: #be923e;
-  --p-danger: #f44336;
+:where([role=link]) {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: inline;
 }
 
 :where(legend) {
@@ -569,7 +560,7 @@
 [type=button i],
 [type=reset i],
 [type=submit i]) {
-  --color: #faf9f9;
+  --color: var(--p-button-color);
   --background: var(--p-default);
   color: var(--color);
   background: var(--background);
@@ -611,7 +602,6 @@
 [type=submit i])[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
-  pointer-events: none;
   box-shadow: none !important;
   transform: none !important;
 }
@@ -651,20 +641,20 @@
 [type=submit i]).outlined {
   background: transparent;
   border-color: var(--background);
-  color: var(--background);
+  --color: var(--background);
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
 [type=reset i],
 [type=submit i]).outlined:hover:not([disabled]) {
   background: var(--background);
-  color: #faf9f9;
+  color: var(--p-button-color);
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
 [type=reset i],
 [type=submit i]).outlined[disabled] {
-  background: transparent !important;
+  background: transparent;
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
@@ -700,13 +690,29 @@
   text-decoration: none;
 }
 :where([role=button]:not(.outlined, .inverted)) {
-  color: #faf9f9;
+  color: var(--p-button-color);
 }
 
-:where([role=link]) {
-  background: none;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  display: inline;
+:root {
+  --p-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --p-line-height: 1.5;
+  --p-color: #0d0d0e;
+  --p-bg: #faf9f9;
+  --p-input-border-color: #313439;
+  --p-button-border-color: transparent;
+  --p-input-border-width: 0.125em;
+  --p-button-border-width: 0.125em;
+  --p-input-border-radius: 0.375em;
+  --p-button-border-radius: 0.375em;
+  --p-input-padding: 0.375em 0.75em;
+  --p-button-padding: 0.375em 1.5em;
+  --p-button-color: #fff;
+  --p-default: #676b72;
+  --p-primary: #2585ce;
+  --p-info: #162a6a;
+  --p-success: #40a276;
+  --p-warning: #be923e;
+  --p-danger: #f44336;
+  --p-link-color: #2585ce;
+  --p-link-hover-color: #5ea9e2;
 }
