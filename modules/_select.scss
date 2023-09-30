@@ -1,24 +1,25 @@
 @use 'variables' as *;
 @use 'functions' as *;
 
-:where(select) {
-	@extend %input;
-	height: 2.5em;
-	appearance: none;
+select {
+	:where(&) {
+		@extend %input;
+		height: 2.5em;
+		appearance: none;
 
-	&::-ms-expand {
-		display: none;
+		&::-ms-expand {
+			display: none;
+		}
+
+		$w: 24;
+		$fill: $input-border-color;
+		$icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$w} #{$w}" fill="#{$fill}"><path d="#{$mdi-unfold-more-horizontal}" /></svg>';
+
+		padding-right: em($w);
+		background: url('data:image/svg+xml;utf8,#{svg-replace($icon)}') no-repeat right center / em($w);
 	}
 
-	$w: 24;
-	$fill: $input-border-color;
-	// https://pictogrammers.com/library/mdi/icon/unfold-more-horizontal/
-	$icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$w} #{$w}" fill="#{$fill}"><path d="#{$mdi-unfold-more-horizontal}" /></svg>';
-
-	padding-right: em($w);
-	background: url('data:image/svg+xml;utf8,#{svg-replace($icon)}') no-repeat right center / em($w);
-
-	&.placeholder {
+	:where(&.placeholder) {
 		color: rgba($body-color, 0.5);
 	}
 }

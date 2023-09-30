@@ -98,7 +98,9 @@
 }
 
 %button {
-	@include button;
+	:where(&) {
+		@include button;
+	}
 }
 
 :where(button:not([role='link']), [type='button' i], [type='reset' i], [type='submit' i]) {
@@ -109,7 +111,7 @@
 	@extend %button;
 	display: inline-block;
 	text-decoration: none;
-	&:not(.outlined):not(.inverted) {
+	&:not(.outlined, .inverted) {
 		color: $body-bg;
 	}
 }
