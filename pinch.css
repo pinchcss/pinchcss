@@ -393,6 +393,7 @@
   padding: 0;
   margin: 0;
   display: inline;
+  cursor: pointer;
 }
 
 :where(legend) {
