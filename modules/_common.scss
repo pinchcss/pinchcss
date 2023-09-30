@@ -1,3 +1,4 @@
+@use 'sass:meta';
 @use 'variables' as *;
 
 %a {
@@ -12,7 +13,7 @@
 
 :root {
 	// typography
-	--#{$prefix}font-family: #{$font-family-sans-serif};
+	--#{$prefix}font-family: #{meta.inspect($font-family-base)};
 	--#{$prefix}line-height: #{$line-height-base};
 
 	// forms
