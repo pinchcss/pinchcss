@@ -80,4 +80,34 @@ nav {
 .col {
 	@extend %col;
 }
+
 </style>
+
+<!--
+<style>
+/**
+ *	1. Higher priority than 2 and 3
+ *	2. similar as 3
+ *  3. similar as 2 but higher priority
+ */
+:hover:where(.container h1):hover { /* 1 */
+	color: blueviolet;
+}
+
+:hover:where(.container h1) {
+	color: green;
+}
+
+:where(.container h1):hover {
+	color: red;
+}
+
+:where(.container h1):after {
+	content: '1';
+}
+
+:hover.container h1 {
+	background-color: aqua;
+}
+</style>
+-->
