@@ -1,0 +1,646 @@
+@charset "UTF-8";
+/*
+ * Forked from https://github.com/csstools/sanitize.css License CC0-1.0
+ * Removed opinionated stuff
+ * Added some more
+ */
+/* Document
+ * ========================================================================== */
+/**
+ * 1. Use a 4-space tab width in all browsers.
+ * 2. Remove the grey highlight on links in iOS.
+ * 3. Prevent adjustments of font size after orientation changes in iOS.
+ */
+:where(:root) {
+  -moz-tab-size: 4; /* 1 */
+  tab-size: 4; /* 1 */
+  -webkit-tap-highlight-color: transparent; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+  text-size-adjust: 100%; /* 3 */
+  font-size: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+/* Sections
+ * ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+:where(body) {
+  margin: 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ */
+:where(h1) {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+ * ========================================================================== */
+/**
+ * Remove the margin on nested lists in Chrome, Edge, and Safari.
+ */
+:where(dl, ol, ul) :where(dl, ol, ul) {
+  margin: 0;
+}
+
+/**
+ * 1. Correct the inheritance of border color in Firefox.
+ * 2. Add the correct box sizing in Firefox.
+ */
+:where(hr) {
+  color: inherit; /* 1 */
+  height: 0; /* 2 */
+}
+
+/**
+ * Remove the list style on navigation lists in all browsers (opinionated).
+ */
+:where(nav) :where(ol, ul) {
+  list-style-type: none;
+  padding: 0;
+}
+
+/**
+ * Prevent VoiceOver from ignoring list semantics in Safari (opinionated).
+ */
+:where(nav li)::before {
+  content: "​";
+  float: left;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ * 3. Prevent overflow of the container in all browsers (opinionated).
+ */
+:where(pre) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+  overflow: auto; /* 3 */
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+/**
+ * Add the correct text decoration in Safari.
+ */
+:where(abbr[title]) {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+:where(b, strong) {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+:where(code, kbd, samp) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+:where(small) {
+  font-size: 80%;
+}
+
+/* Embedded content
+ * ========================================================================== */
+/*
+ * Change the alignment on media elements in all browsers (opinionated).
+ */
+:where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: top;
+}
+
+/**
+ * Remove the border on iframes in all browsers (opinionated).
+ */
+:where(iframe) {
+  border-style: none;
+}
+
+/* Tabular data
+ * ========================================================================== */
+/**
+ * 1. Correct table border color in Chrome, Edge, and Safari.
+ * 2. Remove text indentation from table contents in Chrome, Edge, and Safari.
+ */
+:where(table) {
+  border-color: currentColor; /* 1 */
+  text-indent: 0; /* 2 */
+}
+
+/* Forms
+ * ========================================================================== */
+/**
+ * Remove the margin on controls in Safari.
+ */
+:where(button, input, select) {
+  margin: 0;
+}
+
+:where(:focus-visible) {
+  outline: solid 2px Highlight;
+  outline: auto 5px -webkit-focus-ring-color;
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+:where(button) {
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+:where(button, [type=button i], [type=reset i], [type=submit i]) {
+  -webkit-appearance: button;
+}
+
+:where(button:focus:not(:focus-visible)) {
+  outline: 0;
+}
+
+:where(input[type=button]:not([value])) {
+  vertical-align: top;
+}
+
+/**
+ * Change the inconsistent appearance in all browsers (opinionated).
+ */
+:where(fieldset) {
+  border: 1px solid #a0a0a0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Edge, and Firefox.
+ */
+:where(progress) {
+  vertical-align: baseline;
+}
+
+/**
+ * 1. Remove the margin in Firefox and Safari.
+ * 2. Change the resize direction in all browsers (opinionated).
+ */
+:where(textarea) {
+  margin: 0; /* 1 */
+  resize: vertical; /* 2 */
+}
+
+/**
+ * Correct the odd appearance in Chrome, Edge, and Safari.
+ */
+:where([type=search i]) {
+  -webkit-appearance: none;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 2. Add typography inheritance in all browsers (opinionated).
+ */
+:where(button, input, select, textarea) {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  letter-spacing: inherit; /* 2 */
+}
+
+/**
+ * Remove the border and padding in all browsers (opinionated).
+ */
+:where([type=color i], [type=range i]) {
+  border-width: 0;
+  padding: 0;
+}
+
+/**
+ * Remove the padding in Safari and Chrome (opinionated).
+ */
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+/**
+ * 1. Remove the inheritance of word-wrap in Safari.
+ * 2. Undo the opacity change from Chrome
+ */
+:where(select) {
+  word-wrap: normal; /* 1 */
+}
+:where(select):disabled {
+  opacity: 1; /* 2 */
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+:where(:-moz-ui-invalid) {
+  box-shadow: none;
+}
+
+/* Interactive
+ * ========================================================================== */
+/*
+ * Add the correct styles in Safari.
+ */
+:where(dialog) {
+  background-color: white;
+  border: solid;
+  color: black;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:where(dialog:not([open])) {
+  display: none;
+}
+
+/*
+ * Add the correct display in Safari.
+ */
+:where(details > summary:first-of-type) {
+  display: list-item;
+}
+
+/* Accessibility
+ * ========================================================================== */
+/**
+ * Change the cursor on busy elements in all browsers (opinionated).
+ */
+:where([aria-busy=true i]) {
+  cursor: progress;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers (opinionated).
+ */
+:where([aria-disabled=true i], [disabled]) {
+  cursor: not-allowed;
+}
+
+/*
+ * Change the display on visually hidden accessible elements
+ * in all browsers (opinionated).
+ */
+:where([aria-hidden=false i][hidden]) {
+  display: initial;
+}
+
+:where([aria-hidden=false i][hidden]:not(:focus)) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+/*
+ * 1. Remove animations when motion is reduced (opinionated).
+ * 2. Remove fixed background attachments when motion is reduced (opinionated).
+ * 3. Remove timed scrolling behaviors when motion is reduced (opinionated).
+ * 4. Remove transitions when motion is reduced (opinionated).
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important; /* 1 */
+    animation-duration: 1ms !important; /* 1 */
+    animation-iteration-count: 1 !important; /* 1 */
+    background-attachment: initial !important; /* 2 */
+    scroll-behavior: auto !important; /* 3 */
+    transition-delay: 0s !important; /* 4 */
+    transition-duration: 0s !important; /* 4 */
+  }
+}
+:where(h1, h2, h3, h4, h5, h6) {
+  margin: 0 0 1rem;
+}
+
+:where([role=link]), :where(a:not([role=button])) {
+  color: #2585ce;
+  text-decoration: underline;
+  transition: color 0.5s;
+}
+:focus:where([role=link]), :focus:where(a:not([role=button])), :hover:where([role=link]), :hover:where(a:not([role=button])) {
+  outline: 0;
+  color: #5ea9e2;
+  text-decoration: none;
+}
+
+:root {
+  --p-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --p-line-height: 1.5;
+  --p-input-border-color: #313439;
+  --p-button-border-color: transparent;
+  --p-input-border-width: 0.125em;
+  --p-button-border-width: 0.125em;
+  --p-input-border-radius: 0.375em;
+  --p-button-border-radius: 0.375em;
+  --p-input-padding: 0.375em 0.75em;
+  --p-button-padding: 0.375em 1.5em;
+  --p-default: #676b72;
+  --p-primary: #2585ce;
+  --p-info: #162a6a;
+  --p-success: #40a276;
+  --p-warning: #be923e;
+  --p-danger: #f44336;
+}
+
+:where(legend) {
+  padding: 0 0.25em;
+  margin-left: -0.25em;
+  vertical-align: top;
+  font-weight: 600;
+  width: auto;
+  font-size: 1.2em;
+}
+
+:where(fieldset) {
+  border: 0.125em #0d0d0e solid;
+  border-radius: 0.375em;
+  padding: 0.46em 1em 1em;
+  margin: 0 0 1em;
+}
+
+:where(select), :where(textarea), :where(input:not([type=button i], [type=reset i], [type=submit i], [type=range i])) {
+  box-sizing: border-box;
+  min-height: 2.5em;
+  line-height: 1.5;
+  background: transparent;
+  border: var(--p-input-border-width) var(--p-input-border-color) solid;
+  border-radius: var(--p-input-border-radius);
+  padding: var(--p-input-padding);
+  display: block;
+  width: 100%;
+  transition: all 0.1s ease;
+}
+:focus-visible:where(select), :focus-visible:where(textarea), :focus-visible:where(input:not([type=button i], [type=reset i], [type=submit i], [type=range i])) {
+  outline: 2px solid #2585ce;
+  outline-offset: 1px;
+}
+
+:where([type=checkbox i], [type=radio i]) {
+  width: 1.5em;
+  height: 1.5em;
+  flex-shrink: 0;
+  min-height: 0;
+  padding: 0;
+  margin-inline-end: 0.25em;
+  display: inline-block;
+  appearance: none;
+  box-sizing: border-box;
+  vertical-align: top;
+  position: relative;
+}
+:where([type=checkbox i], [type=radio i]):after {
+  display: block;
+  content: "";
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+  position: absolute;
+  opacity: 0;
+}
+:where([type=checkbox i], [type=radio i]):checked:after {
+  opacity: 1;
+}
+:where(label) :where([type=checkbox i], [type=radio i]) {
+  margin-inline-end: 0;
+}
+
+:where(input[type=checkbox i]):after {
+  width: 10px;
+  height: 12px;
+  border: solid var(--p-input-border-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  top: 2px;
+  left: 5px;
+}
+
+:where(input[type=radio i]) {
+  border-radius: 50%;
+}
+:where(input[type=radio i]):after {
+  border-radius: 50%;
+  border: 6px solid var(--p-input-border-color);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+:where(textarea) {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+:where([type=range i]) {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+  vertical-align: middle;
+  /* slider track */
+  /* slider thumb */
+}
+:where([type=range i]):focus-visible {
+  outline: 0;
+}
+:where([type=range i])::-webkit-slider-runnable-track {
+  background-color: #313439;
+  border-radius: 0.375em;
+  height: 0.2em;
+}
+:where([type=range i])::-moz-range-track {
+  background-color: #313439;
+  border-radius: 0.375em;
+  height: 0.2em;
+}
+:where([type=range i])::-webkit-slider-thumb {
+  box-sizing: border-box;
+  appearance: none;
+  border-radius: 50%;
+  border: var(--p-input-border-width) var(--p-input-border-color) solid;
+  background-color: white;
+  height: 1.5em;
+  width: 1.5em;
+  transform: translateY(var(--p-input-border-width));
+  margin-top: -0.75em;
+}
+:where([type=range i]):focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #2585ce;
+  outline-offset: 1px;
+}
+:where([type=range i])::-moz-range-thumb {
+  box-sizing: border-box;
+  border: var(--p-input-border-width) var(--p-input-border-color) solid;
+  border-radius: 50%;
+  background-color: white;
+  height: 1.5em;
+  width: 1.5em;
+}
+:where([type=range i]):focus-visible::-moz-range-thumb {
+  outline: 2px solid #2585ce;
+  outline-offset: 1px;
+}
+
+:where(select) {
+  height: 2.5em;
+  appearance: none;
+  padding-right: 1.5em;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23313439"><path d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" /></svg>') no-repeat right center/1.5em;
+}
+:where(select)::-ms-expand {
+  display: none;
+}
+:where(select).placeholder {
+  color: rgba(13, 13, 14, 0.5);
+}
+
+:where([role=button]), :where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i]) {
+  --color: #faf9f9;
+  --background: var(--p-default);
+  color: var(--color);
+  background: var(--background);
+  box-sizing: border-box;
+  min-height: 2.5em;
+  padding: 0.375em 1.5em;
+  border: var(--p-button-border-width) var(--p-button-border-color) solid;
+  border-radius: var(--p-button-border-radius);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin-bottom: 0.5ex;
+  user-select: none;
+  transition: all 0.5s ease;
+}
+:focus-visible:where([role=button]), :focus-visible:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i]) {
+  outline: 2px solid #2585ce;
+  outline-offset: 1px;
+}
+:hover:where([role=button]), :hover:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i]) {
+  box-shadow: inset 0 0 0 9em rgba(255, 255, 255, 0.5);
+}
+:active:where([role=button]), :active:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i]) {
+  transform: scale(0.95);
+}
+[disabled]:where([role=button]), [disabled]:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none !important;
+  transform: none !important;
+}
+:where(.primary:where([role=button]), .primary:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])) {
+  --background: var(--p-primary);
+}
+:where(.info:where([role=button]), .info:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])) {
+  --background: var(--p-info);
+}
+:where(.success:where([role=button]), .success:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])) {
+  --background: var(--p-success);
+}
+:where(.warning:where([role=button]), .warning:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])) {
+  --background: var(--p-warning);
+}
+:where(.danger:where([role=button]), .danger:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])) {
+  --background: var(--p-danger);
+}
+:where(.outlined:where([role=button]), .outlined:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])) {
+  background: transparent;
+  border-color: var(--background);
+  color: var(--background);
+}
+:where(.outlined:where([role=button]), .outlined:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])):hover:not([disabled]) {
+  background: var(--background);
+  color: #faf9f9;
+}
+:where(.outlined:where([role=button]), .outlined:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i]))[disabled] {
+  background: transparent !important;
+}
+:where(.inverted:where([role=button]), .inverted:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])) {
+  --color: #0d0d0e;
+  --background: #faf9f9;
+}
+:where(.inverted:where([role=button]), .inverted:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])):hover:not([disabled]) {
+  background: #d7cfcf;
+}
+:where(.inverted:where([role=button]), .inverted:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])).outlined {
+  background: transparent;
+  color: var(--background);
+  border-color: var(--background);
+}
+:where(.inverted:where([role=button]), .inverted:where(button:not([role=link]), [type=button i], [type=reset i], [type=submit i])).outlined:hover:not([disabled]) {
+  background: var(--background);
+  color: var(--color);
+}
+
+:where([role=button]) {
+  display: inline-block;
+  text-decoration: none;
+}
+:where([role=button]):not(.outlined):not(.inverted) {
+  color: #faf9f9;
+}
+
+:where([role=link]) {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}

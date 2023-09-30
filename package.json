@@ -9,7 +9,7 @@
 	"style": "pinch.min.css",
 	"files": [
 		"modules/",
-		"*.css",
+		"*.min.css",
 		"*.scss"
 	],
 	"engines": {
