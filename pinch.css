@@ -536,7 +536,7 @@
   box-sizing: border-box;
   border: var(--p-input-border-width) var(--p-input-border-color) solid;
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--p-bg);
   height: 1.5em;
   width: 1.5em;
 }
