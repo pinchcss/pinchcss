@@ -33,33 +33,28 @@ $light-accent: #67accb !default;
 $brand-main: #2585ce !default;
 $dark-accent: #2665a0 !default;
 $dark-shades: #162a6a !default;
+$dark: #0d0d0e !default;
 
 $color-green: #40a276 !default;
 $color-yellow: #be923e !default;
 $color-red: #f44336 !default;
 
-$color-black: #0d0d0e !default;
-$color-darkgray: #313439 !default;
-$color-midgray: #676b72 !default;
-$color-gray: #bdbdbd !default;
-$color-lightgray: #d4d4d4 !default;
-$color-silver: #e0e1e1 !default;
-$color-aluminum: #f8f8f8 !default;
+$color-grey: #313439 !default;
 
-$link-color: $brand-main;
-$link-decoration: underline;
-$link-hover-color: lighten($brand-main, 15%);
-$link-hover-decoration: none;
-
-$default: $color-midgray !default;
+$default: #676b72 !default;
 $primary: $brand-main !default;
 $info: $dark-shades !default;
 $success: $color-green !default;
 $warning: $color-yellow !default;
 $danger: $color-red !default;
 
-$body-color: $color-black !default;
+$body-color: $dark !default;
 $body-bg: $light-shades !default;
+
+$link-color: $brand-main !default;
+$link-decoration: underline !default;
+$link-hover-color: lighten($brand-main, 15%) !default;
+$link-hover-decoration: none !default;
 
 $gap: 1em !default;
 $gap-md: 1.5em !default;
@@ -70,7 +65,7 @@ $border-radius: em(6) !default;
 //
 // FORMS
 //
-$input-border-color: $color-darkgray !default;
+$input-border-color: $color-grey !default;
 $button-border-color: transparent !default;
 $input-border-width: $border-width !default;
 $button-border-width: $border-width !default;
@@ -78,8 +73,8 @@ $input-border-radius: $border-radius !default;
 $button-border-radius: $border-radius !default;
 $input-padding: em(6) em(12) !default; //0.375em 0.75em
 $button-padding: em(6) em(24) !default; //0.375em 1.5em
-$label-margin-bottom: 0.25em !default;
-$input-margin-bottom: 0.5em !default;
+$label-margin-bottom: em(4) !default;
+$input-margin-bottom: em(8) !default;
 
 //
 // ICONS
