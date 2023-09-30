@@ -145,22 +145,26 @@
 		margin-top: -0.75em;
 	}
 
-	&:focus-visible::-webkit-slider-thumb {
-		outline: 2px solid $brand-main;
-		outline-offset: 1px;
+	&:focus-visible {
+		&::-webkit-slider-thumb {
+			outline: 2px solid $brand-main;
+			outline-offset: 1px;
+		}
 	}
 
 	&::-moz-range-thumb {
 		box-sizing: border-box;
 		border: var(--#{$prefix}-input-border-width) var(--#{$prefix}-input-border-color) solid;
 		border-radius: 50%;
-		background-color: white;
+		background-color: var(--#{$prefix}-bg);
 		height: 1.5em;
 		width: 1.5em;
 	}
 
-	&:focus-visible::-moz-range-thumb {
-		outline: 2px solid $brand-main;
-		outline-offset: 1px;
+	&:focus-visible {
+		&::-moz-range-thumb {
+			outline: 2px solid $brand-main;
+			outline-offset: 1px;
+		}
 	}
 }
