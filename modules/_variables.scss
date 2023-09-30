@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:map';
 @use 'functions' as *;
 
 $prefix: 'p' !default;
@@ -28,6 +29,22 @@ $paragraph-margin-bottom: 1rem !default;
 //
 
 //generated on http://colormind.io/bootstrap/
+// $theme-colors: (
+// 	'light-shades': #faf9f9,
+// 	'light-accent': #67accb,
+// 	'warning': #ffc107,
+// 	'brand-main': #2585ce,
+// 	'dark-accent': #2665a0,
+// 	'dark-shades': #162a6a,
+// 	'dark': #0d0d0e,
+// 	'color-green': #40a276,
+// 	'color-yellow': #be923e,
+// 	'color-red': #f44336,
+// 	'color-grey': #313439,
+// 	'color-white': #fff,
+// 	'default': #676b72,
+// ) !default;
+
 $light-shades: #faf9f9 !default;
 $light-accent: #67accb !default;
 $brand-main: #2585ce !default;

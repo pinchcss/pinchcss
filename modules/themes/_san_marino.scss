@@ -1,30 +1,26 @@
-@use '../variables' as *;
-
-$light-shades: rgb(228, 233, 236); // athens gray
-$light-accent: rgb(126, 158, 181); // bali hai
-$brand-main: rgb(69, 106, 157); // san marino
-$brand-main-hex: #456a9d;
-$dark-accent: rgb(107, 113, 133); // storm gray
-$dark-shades: rgb(26, 29, 44); // mirage
-$dark-shades-hex: #1a1d2c;
-$dark: rgb(7, 8, 12);
-$dark-hex: #07080c;
-
-$color-green: rgb(74, 154, 103); // fruit salad
-$color-green-hex: #4a9a67;
-$color-yellow: rgb(199, 138, 47); // brandy punch
-$color-yellow-hex: #c78a2f;
-$color-red: rgb(244, 67, 54); // pomegranate
-$color-red-hex: #f44336;
-
-$color-grey: #313439;
-
-$default: #999;
-$primary: $brand-main;
-$info: $dark;
-$success: $color-green;
-$warning: $color-yellow;
-$danger: $color-red;
-
-$body-color: $dark;
-$body-bg: $light-shades;
+@use '../variables' with (
+	// athens gray
+	$light-shades: rgb(228, 233, 236),
+	// bali hai
+	$light-accent: rgb(126, 158, 181),
+	// san marino
+	// $brand-main-hex: #456a9d,
+	$brand-main: rgb(69, 106, 157),
+	// storm gray
+	$dark-accent: rgb(107, 113, 133),
+	// mirage
+	// $dark-shades-hex: #1a1d2c,
+	$dark-shades: rgb(26, 29, 44),
+	// $dark-hex: #07080c,
+	$dark: rgb(7, 8, 12),
+	// fruit salad
+	// $color-green-hex: #4a9a67,
+	$color-green: rgb(74, 154, 103),
+	// brandy punch
+	// $color-yellow-hex: #c78a2f,
+	$color-yellow: rgb(199, 138, 47),
+	// pomegranate
+	// $color-red-hex: #f44336,
+	$color-red: rgb(244, 67, 54),
+	$color-grey: rgb(26, 29, 44)
+);
