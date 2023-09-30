@@ -1,10 +1,9 @@
-/*
+/**
  * Forked from https://github.com/csstools/sanitize.css License CC0-1.0
  * Removed opinionated stuff
  * Added some more
  */
 
-@use 'variables' as *;
 @use 'breakpoints' as bp;
 
 /* Document
@@ -23,8 +22,8 @@
 	-webkit-text-size-adjust: 100%; /* 3 */
 	text-size-adjust: 100%; /* 3 */
 	font-size: 100%;
-	font-family: $font-family-sans-serif;
-	line-height: $line-height-base;
+	font-family: sans-serif;
+	line-height: 1.5;
 }
 
 /* Sections
@@ -66,6 +65,7 @@
 
 :where(hr) {
 	color: inherit; /* 1 */
+	box-sizing: content-box; /* 2 */
 	height: 0; /* 2 */
 }
 
@@ -85,18 +85,6 @@
 :where(nav li)::before {
 	content: '\200B';
 	float: left;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- * 3. Prevent overflow of the container in all browsers (opinionated).
- */
-
-:where(pre) {
-	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
-	overflow: auto; /* 3 */
 }
 
 /* Text-level semantics
@@ -124,9 +112,19 @@
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
-:where(code, kbd, samp) {
+:where(pre, code, kbd, samp) {
 	font-family: monospace, monospace; /* 1 */
 	font-size: 1em; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ * 3. Prevent overflow of the container in all browsers (opinionated).
+ */
+
+:where(pre) {
+	overflow: auto; /* 3 */
 }
 
 /**
