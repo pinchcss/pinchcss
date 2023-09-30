@@ -17,6 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style lang="scss">
+// @import '../modules/themes/san_marino';
 @import '../pinch';
 
 #app {
