@@ -1,8 +1,8 @@
 @use './variables' as *;
 
 :where(:root) {
-	font-family: var(--#{$prefix}font-family);
-	line-height: var(--#{$prefix}line-height);
+	font-family: var(--#{$prefix}-font-family);
+	line-height: var(--#{$prefix}-line-height);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
