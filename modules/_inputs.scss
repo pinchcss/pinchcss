@@ -138,7 +138,7 @@
 		appearance: none;
 		border-radius: 50%;
 		border: var(--#{$prefix}-input-border-width) var(--#{$prefix}-input-border-color) solid;
-		background-color: white;
+		background-color: var(--#{$prefix}-bg);
 		height: 1.5em;
 		width: 1.5em;
 		transform: translateY(var(--#{$prefix}-input-border-width));
