@@ -2,9 +2,11 @@
 @use 'variables' as *;
 
 :root {
-	// typography
+	// body
 	--#{$prefix}-font-family: #{meta.inspect($font-family-base)};
 	--#{$prefix}-line-height: #{$line-height-base};
+	--#{$prefix}-color: #{$body-color};
+	--#{$prefix}-bg: #{$body-bg};
 
 	// forms
 	--#{$prefix}-input-border-color: #{$input-border-color};
@@ -26,30 +28,4 @@
 	--#{$prefix}-danger: #{$danger};
 	--#{$prefix}-link-color: #{$link-color};
 	--#{$prefix}-link-hover-color: #{$link-hover-color};
-}
-
-
-%a {
-	:where(&) {
-		color: var(--#{$prefix}-link-color);
-		text-decoration: $link-decoration;
-		transition: color 0.5s;
-
-		@include hover {
-			color: var(--#{$prefix}-link-hover-color);
-			text-decoration: $link-hover-decoration;
-		}
-	}
-}
-
-[role='link'] {
-	@extend %a;
-
-	:where(&) {
-		background: none;
-		border: 0;
-		padding: 0;
-		margin: 0;
-		display: inline;
-	}
 }
