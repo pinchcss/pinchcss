@@ -18,6 +18,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style lang="scss">
 // @import '../modules/themes/san_marino';
+// @import '../modules/themes/san_marino_waterloo';
+// @import '../modules/themes/horizon';
 @import '../pinch';
 
 #app {
