@@ -402,11 +402,12 @@
   font-weight: 600;
   width: auto;
   font-size: 1.2em;
+  color: var(--p-input-border-color);
 }
 
 :where(fieldset) {
-  border: 0.125em #0d0d0e solid;
-  border-radius: 0.375em;
+  border: var(--p-input-border-width) var(--p-input-border-color) solid;
+  border-radius: var(--p-input-border-radius);
   padding: 0.46em 1em 1em;
   margin: 0 0 1em;
 }
@@ -520,7 +521,7 @@
   appearance: none;
   border-radius: 50%;
   border: var(--p-input-border-width) var(--p-input-border-color) solid;
-  background-color: white;
+  background-color: var(--p-bg);
   height: 1.5em;
   width: 1.5em;
   transform: translateY(var(--p-input-border-width));
