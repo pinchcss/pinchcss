@@ -1,36 +1,32 @@
 @use 'variables' as *;
 @use 'breakpoints' as bp;
 
-@mixin container {
-	margin: 0 $gap;
-	@include bp.media('>=md') {
-		margin: 0 $gap-md;
-	}
-}
-
-@mixin container-invert {
-	margin: 0 (-$gap);
-	padding: 0 $gap;
-	box-sizing: border-box;
-	@include bp.media('>=md') {
-		padding: 0 $gap-md;
-		margin: 0 (-$gap-md);
-	}
-}
-
-@mixin box {
-	padding: $gap;
-	@include bp.media('>=md') {
-		padding: $gap-md;
-	}
-}
-
 %container {
-	@include container;
+	:where(&) {
+		margin: 0 $gap;
+		@include bp.media('>=md') {
+			margin: 0 $gap-md;
+		}
+	}
 }
+
 %container-invert {
-	@include container-invert;
+	:where(&) {
+		margin: 0 (-$gap);
+		padding: 0 $gap;
+		box-sizing: border-box;
+		@include bp.media('>=md') {
+			padding: 0 $gap-md;
+			margin: 0 (-$gap-md);
+		}
+	}
 }
+
 %box {
-	@include box;
+	:where(&) {
+		padding: $gap;
+		@include bp.media('>=md') {
+			padding: $gap-md;
+		}
+	}
 }
