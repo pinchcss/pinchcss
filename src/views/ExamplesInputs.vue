@@ -34,8 +34,14 @@ const fields = {
 				</select>
 			</p>
 			<p class="field">
-				<label for="select">Select</label>
-				<select name="select" id="select" :class="{ placeholder: select === '' }" v-model="select" disabled>
+				<label for="select-disabled">Select Disabled</label>
+				<select
+					name="select-disabled"
+					id="select-disabled"
+					:class="{ placeholder: select === '' }"
+					v-model="select"
+					disabled
+				>
 					<option value="" disabled>Select Item</option>
 					<option value="1">Option 1</option>
 					<option value="1">Option 2</option>
@@ -54,7 +60,8 @@ const fields = {
 			</p>
 			<p class="field">
 				<input type="checkbox" name="checkbox-3" id="checkbox-3" />
-				<label for="checkbox-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolor, quod! Aperiam, atque dolores
+				<label for="checkbox-3"
+					>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolor, quod! Aperiam, atque dolores
 					dolorum expedita facilis hic impedit iste obcaecati rerum sapiente tenetur voluptatum? Ipsam necessitatibus
 					porro quisquam recusandae.
 				</label>
