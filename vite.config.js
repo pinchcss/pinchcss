@@ -12,8 +12,10 @@ export default defineConfig(() => {
 			},
 		},
 		css: {
-			lightningcss: {
-				sourceMap: true,
+			preprocessorOptions: {
+				scss: {
+					additionalData: `@import '@/assets/additional_data';`,
+				},
 			},
 		},
 		build: {
