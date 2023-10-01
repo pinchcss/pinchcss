@@ -20,10 +20,16 @@
 	@return $string;
 }
 
-// Escape svg to make it work in Firefox
+// Escape svg to make it work in Firefox(1) and in css properties(2)
 
 @function svg-replace($string) {
-	@return str-replace($string, '#', '%23');
+	$map: (/* 1 */ '#': '%23', /* 2 */ '"': "'");
+
+	@each $search, $replace in $map {
+		$string: str-replace($string, $search, $replace);
+	}
+
+	@return $string;
 }
 
 @function strip-unit($number) {
