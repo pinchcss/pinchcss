@@ -366,8 +366,8 @@
   }
 }
 :where(:root) {
-  font-family: var(--p-font-family);
-  line-height: var(--p-line-height);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -375,13 +375,13 @@
 }
 
 :where(a:not([role=button]), [role=link]) {
-  color: var(--p-link-color);
+  color: var(--link-color);
   text-decoration: underline;
   transition: color 0.5s;
 }
 :where(a:not([role=button]), [role=link]):focus, :where(a:not([role=button]), [role=link]):hover {
   outline: 0;
-  color: var(--p-link-hover-color);
+  color: var(--link-hover-color);
   text-decoration: none;
 }
 
@@ -401,12 +401,12 @@
   font-weight: 600;
   width: auto;
   font-size: 1.2em;
-  color: var(--p-input-border-color);
+  color: var(--input-border-color);
 }
 
 :where(fieldset) {
-  border: var(--p-input-border-width) var(--p-input-border-color) solid;
-  border-radius: var(--p-input-border-radius);
+  border: var(--input-border-width) var(--input-border-color) solid;
+  border-radius: var(--input-border-radius);
   padding: 0.46em 1em 1em;
   margin: 0 0 1em;
 }
@@ -419,9 +419,9 @@
   min-height: 2.5em;
   line-height: 1.5;
   background: transparent;
-  border: var(--p-input-border-width) var(--p-input-border-color) solid;
-  border-radius: var(--p-input-border-radius);
-  padding: var(--p-input-padding);
+  border: var(--input-border-width) var(--input-border-color) solid;
+  border-radius: var(--input-border-radius);
+  padding: var(--input-padding);
   display: block;
   width: 100%;
   transition: all 0.1s ease;
@@ -469,7 +469,7 @@
 :where([type=checkbox i]):after {
   width: 10px;
   height: 12px;
-  border: solid var(--p-input-border-color);
+  border: solid var(--input-border-color);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   top: 2px;
@@ -481,7 +481,7 @@
 }
 :where([type=radio i]):after {
   border-radius: 50%;
-  border: 0.375em solid var(--p-input-border-color);
+  border: 0.375em solid var(--input-border-color);
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
@@ -506,12 +506,12 @@
   outline: 0;
 }
 :where([type=range i])::-webkit-slider-runnable-track {
-  background-color: var(--p-input-border-color);
+  background-color: var(--input-border-color);
   border-radius: 0.375em;
   height: 0.2em;
 }
 :where([type=range i])::-moz-range-track {
-  background-color: var(--p-input-border-color);
+  background-color: var(--input-border-color);
   border-radius: 0.375em;
   height: 0.2em;
 }
@@ -519,11 +519,11 @@
   box-sizing: border-box;
   appearance: none;
   border-radius: 50%;
-  border: var(--p-input-border-width) var(--p-input-border-color) solid;
-  background-color: var(--p-bg);
+  border: var(--input-border-width) var(--input-border-color) solid;
+  background-color: var(--bg);
   height: 1.5em;
   width: 1.5em;
-  transform: translateY(var(--p-input-border-width));
+  transform: translateY(var(--input-border-width));
   margin-top: -0.75em;
 }
 :where([type=range i]):focus-visible::-webkit-slider-thumb {
@@ -532,9 +532,9 @@
 }
 :where([type=range i])::-moz-range-thumb {
   box-sizing: border-box;
-  border: var(--p-input-border-width) var(--p-input-border-color) solid;
+  border: var(--input-border-width) var(--input-border-color) solid;
   border-radius: 50%;
-  background-color: var(--p-bg);
+  background-color: var(--bg);
   height: 1.5em;
   width: 1.5em;
 }
@@ -558,22 +558,22 @@
 }
 
 :where(select.placeholder) {
-  color: rgba(var(--p-color-rgb), 0.5);
+  color: rgba(var(--color-rgb), 0.5);
 }
 
 :where([role=button], button:not([role=link]),
 [type=button i],
 [type=reset i],
 [type=submit i]) {
-  --color: var(--p-button-color);
-  --background: var(--p-default);
+  --color: var(--button-color);
+  --background: var(--default);
   color: var(--color);
   background: var(--background);
   box-sizing: border-box;
   min-height: 2.5em;
   padding: 0.375em 1.5em;
-  border: var(--p-button-border-width) var(--p-button-border-color) solid;
-  border-radius: var(--p-button-border-radius);
+  border: var(--button-border-width) var(--button-border-color) solid;
+  border-radius: var(--button-border-radius);
   font-weight: 500;
   text-align: center;
   cursor: pointer;
@@ -614,33 +614,33 @@
 [type=button i],
 [type=reset i],
 [type=submit i]).primary {
-  --background: var(--p-primary);
+  --background: var(--primary);
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
 [type=reset i],
 [type=submit i]).info {
-  --background: var(--p-info);
-  --color: var(--p-info-color, var(--p-button-color));
-  --color-contrast: var(--p-info-color);
+  --background: var(--info);
+  --color: var(--info-color, var(--button-color));
+  --color-contrast: var(--info-color);
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
 [type=reset i],
 [type=submit i]).success {
-  --background: var(--p-success);
+  --background: var(--success);
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
 [type=reset i],
 [type=submit i]).warning {
-  --background: var(--p-warning);
+  --background: var(--warning);
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
 [type=reset i],
 [type=submit i]).danger {
-  --background: var(--p-danger);
+  --background: var(--danger);
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
@@ -655,7 +655,7 @@
 [type=reset i],
 [type=submit i]).outlined:hover:not([disabled]) {
   background: var(--background);
-  color: var(--color-contrast, var(--p-button-color));
+  color: var(--color-contrast, var(--button-color));
 }
 
 :where([role=button]) {
@@ -664,59 +664,59 @@
 }
 
 :where(:root) {
-  --p-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --p-line-height: 1.5;
-  --p-input-border-color: #313439;
-  --p-button-border-color: transparent;
-  --p-input-border-width: 0.125em;
-  --p-button-border-width: 0.125em;
-  --p-input-border-radius: 0.375em;
-  --p-button-border-radius: 0.375em;
-  --p-input-padding: 0.375em 0.75em;
-  --p-button-padding: 0.375em 1.5em;
-  --p-button-color: #fff;
-  --p-default: #676b72;
-  --p-primary: #2585ce;
-  --p-info: #162a6a;
-  --p-success: #40a276;
-  --p-warning: #be923e;
-  --p-danger: #f44336;
-  --p-link-color: #2585ce;
-  --p-link-hover-color: #5ea9e2;
-  color: var(--p-color);
-  background: var(--p-bg);
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --line-height: 1.5;
+  --input-border-color: #313439;
+  --button-border-color: transparent;
+  --input-border-width: 0.125em;
+  --button-border-width: 0.125em;
+  --input-border-radius: 0.375em;
+  --button-border-radius: 0.375em;
+  --input-padding: 0.375em 0.75em;
+  --button-padding: 0.375em 1.5em;
+  --button-color: #fff;
+  --default: #676b72;
+  --primary: #2585ce;
+  --info: #162a6a;
+  --success: #40a276;
+  --warning: #be923e;
+  --danger: #f44336;
+  --link-color: #2585ce;
+  --link-hover-color: #5ea9e2;
+  color: var(--color);
+  background: var(--bg);
 }
 :where(:root),
 :where(:root) [data-theme=light] {
-  --p-color: #0d0d0e;
-  --p-color-rgb: 13, 13, 14;
-  --p-bg: #faf9f9;
-  --p-info: #162a6a;
-  --p-info-color: #fff;
+  --color: #0d0d0e;
+  --color-rgb: 13, 13, 14;
+  --bg: #faf9f9;
+  --info: #162a6a;
+  --info-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :where(:root:not([data-theme=light])) {
-    --p-color: #faf9f9;
-    --p-color-rgb: 250, 249, 249;
-    --p-bg: #0d0d0e;
-    --p-input-border-color: #faf9f9;
-    --p-info: #faf9f9;
-    --p-info-color: #0d0d0e;
+    --color: #faf9f9;
+    --color-rgb: 250, 249, 249;
+    --bg: #0d0d0e;
+    --input-border-color: #faf9f9;
+    --info: #faf9f9;
+    --info-color: #0d0d0e;
     --select-bg: initial;
   }
 }
 [data-theme=dark] {
-  --p-color: #faf9f9;
-  --p-color-rgb: 250, 249, 249;
-  --p-bg: #0d0d0e;
-  --p-input-border-color: #faf9f9;
-  --p-info: #faf9f9;
-  --p-info-color: #0d0d0e;
+  --color: #faf9f9;
+  --color-rgb: 250, 249, 249;
+  --bg: #0d0d0e;
+  --input-border-color: #faf9f9;
+  --info: #faf9f9;
+  --info-color: #0d0d0e;
   --select-bg: initial;
 }
 
 :where([data-theme]) {
-  color: var(--p-color);
-  background: var(--p-bg);
+  color: var(--color);
+  background: var(--bg);
 }

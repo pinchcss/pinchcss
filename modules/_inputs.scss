@@ -8,9 +8,9 @@
 		min-height: 2.5em;
 		line-height: 1.5;
 		background: transparent;
-		border: var(--#{$prefix}-input-border-width) var(--#{$prefix}-input-border-color) solid;
-		border-radius: var(--#{$prefix}-input-border-radius);
-		padding: var(--#{$prefix}-input-padding);
+		border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
+		border-radius: var(--#{$prefix}input-border-radius);
+		padding: var(--#{$prefix}input-padding);
 		display: block;
 		width: 100%;
 		transition: all 0.1s ease;
@@ -70,7 +70,7 @@
 		&:after {
 			width: 10px;
 			height: 12px;
-			border: solid var(--#{$prefix}-input-border-color);
+			border: solid var(--#{$prefix}input-border-color);
 			border-width: 0 2px 2px 0;
 			transform: rotate(45deg);
 			top: 2px;
@@ -85,7 +85,7 @@
 
 		&:after {
 			border-radius: 50%;
-			border: em(6) solid var(--#{$prefix}-input-border-color);
+			border: em(6) solid var(--#{$prefix}input-border-color);
 			transform: translate(-50%, -50%);
 			top: 50%;
 			left: 50%;
@@ -121,13 +121,13 @@
 
 	/* slider track */
 	&::-webkit-slider-runnable-track {
-		background-color: var(--#{$prefix}-input-border-color);
+		background-color: var(--#{$prefix}input-border-color);
 		border-radius: $border-radius;
 		height: 0.2em;
 	}
 
 	&::-moz-range-track {
-		background-color: var(--#{$prefix}-input-border-color);
+		background-color: var(--#{$prefix}input-border-color);
 		border-radius: $border-radius;
 		height: 0.2em;
 	}
@@ -137,11 +137,11 @@
 		box-sizing: border-box;
 		appearance: none;
 		border-radius: 50%;
-		border: var(--#{$prefix}-input-border-width) var(--#{$prefix}-input-border-color) solid;
-		background-color: var(--#{$prefix}-bg);
+		border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
+		background-color: var(--#{$prefix}bg);
 		height: 1.5em;
 		width: 1.5em;
-		transform: translateY(var(--#{$prefix}-input-border-width));
+		transform: translateY(var(--#{$prefix}input-border-width));
 		margin-top: -0.75em;
 	}
 
@@ -154,9 +154,9 @@
 
 	&::-moz-range-thumb {
 		box-sizing: border-box;
-		border: var(--#{$prefix}-input-border-width) var(--#{$prefix}-input-border-color) solid;
+		border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
 		border-radius: 50%;
-		background-color: var(--#{$prefix}-bg);
+		background-color: var(--#{$prefix}bg);
 		height: 1.5em;
 		width: 1.5em;
 	}

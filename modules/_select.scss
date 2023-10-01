@@ -27,6 +27,6 @@ select {
 	}
 
 	:where(&.placeholder) {
-		color: rgba(var(--#{$prefix}-color-rgb), 0.5);
+		color: rgba(var(--#{$prefix}color-rgb), 0.5);
 	}
 }

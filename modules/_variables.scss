@@ -2,7 +2,11 @@
 @use 'sass:map';
 @use 'functions' as *;
 
-$prefix: 'p' !default;
+$use-prefix: false !default;
+$prefix: '' !default;
+@if $use-prefix {
+	$prefix: 'p-' !default;
+}
 
 //
 // TYPOGRAPHY
