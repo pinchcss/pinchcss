@@ -3,29 +3,33 @@
 @use 'breakpoints' as bp;
 
 @mixin grid($media: false) {
-	@if not $media {
-		display: flex;
-	} @else {
-		@include bp.media($media) {
-			@include grid;
+	:where(&) {
+		@if not $media {
+			display: flex;
+		} @else {
+			@include bp.media($media) {
+				@include grid;
+			}
 		}
 	}
 }
 
 @mixin col($cols: false, $count: 12, $media: false) {
-	@if not $media {
-		@if not $cols {
-			width: 100%;
-			flex: 1 1 auto;
-			max-width: 100%;
+	:where(&) {
+		@if not $media {
+			@if not $cols {
+				width: 100%;
+				flex: 1 1 auto;
+				max-width: 100%;
+			} @else {
+				flex: 0 0 percentage(math.div($cols, $count));
+				max-width: percentage(math.div($cols, $count));
+			}
 		} @else {
-			flex: 0 0 percentage(math.div($cols, $count));
-			max-width: percentage(math.div($cols, $count));
-		}
-	} @else {
-		@include col(12);
-		@include bp.media($media) {
-			@include col($cols, $count);
+			@include col(12);
+			@include bp.media($media) {
+				@include col($cols, $count);
+			}
 		}
 	}
 }
@@ -33,12 +37,15 @@
 %grid {
 	@include grid;
 }
+
 %grid-sm {
 	@include grid('>=sm');
 }
+
 %grid-md {
 	@include grid('>=md');
 }
+
 %grid-lg {
 	@include grid('>=lg');
 }
@@ -46,30 +53,39 @@
 %col {
 	@include col;
 }
+
 %col-half {
 	@include col(6);
 }
+
 %col-third {
 	@include col(4);
 }
+
 %col-two-third {
 	@include col(8);
 }
+
 %col-three-fourth {
 	@include col(9);
 }
+
 %col-fourth {
 	@include col(3);
 }
+
 %col-fifth {
 	@include col(2, 10);
 }
+
 %col-two-fifth {
 	@include col(4, 10);
 }
+
 %col-three-fifth {
 	@include col(6, 10);
 }
+
 %col-sixth {
 	@include col(2);
 }
