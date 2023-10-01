@@ -3,15 +3,15 @@
 
 @mixin button {
 	:where(&) {
-		--color: var(--#{$prefix}-button-color);
-		--background: var(--#{$prefix}-default);
+		--color: var(--#{$prefix}button-color);
+		--background: var(--#{$prefix}default);
 		color: var(--color);
 		background: var(--background);
 		box-sizing: border-box;
 		min-height: 2.5em;
 		padding: em(6) em(24);
-		border: var(--#{$prefix}-button-border-width) var(--#{$prefix}-button-border-color) solid;
-		border-radius: var(--#{$prefix}-button-border-radius);
+		border: var(--#{$prefix}button-border-width) var(--#{$prefix}button-border-color) solid;
+		border-radius: var(--#{$prefix}button-border-radius);
 		font-weight: 500;
 		text-align: center;
 		cursor: pointer;
@@ -41,25 +41,25 @@
 		}
 
 		&.primary {
-			--background: var(--#{$prefix}-primary);
+			--background: var(--#{$prefix}primary);
 		}
 
 		&.info {
-			--background: var(--#{$prefix}-info);
-			--color: var(--#{$prefix}-info-color, var(--#{$prefix}-button-color));
-			--color-contrast: var(--#{$prefix}-info-color);
+			--background: var(--#{$prefix}info);
+			--color: var(--#{$prefix}info-color, var(--#{$prefix}button-color));
+			--color-contrast: var(--#{$prefix}info-color);
 		}
 
 		&.success {
-			--background: var(--#{$prefix}-success);
+			--background: var(--#{$prefix}success);
 		}
 
 		&.warning {
-			--background: var(--#{$prefix}-warning);
+			--background: var(--#{$prefix}warning);
 		}
 
 		&.danger {
-			--background: var(--#{$prefix}-danger);
+			--background: var(--#{$prefix}danger);
 		}
 
 		&.outlined {
@@ -69,7 +69,7 @@
 			&:hover {
 				&:not([disabled]) {
 					background: var(--background);
-					color: var(--color-contrast, var(--#{$prefix}-button-color));
+					color: var(--color-contrast, var(--#{$prefix}button-color));
 				}
 			}
 		}
