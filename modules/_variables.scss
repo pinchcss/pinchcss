@@ -68,6 +68,7 @@ $danger: $color-red !default;
 
 $body-color: $dark !default;
 $body-bg: $light-shades !default;
+$body-bg-dark: $dark !default;
 
 $link-color: $brand-main !default;
 $link-decoration: underline !default;
@@ -84,6 +85,7 @@ $border-radius: em(6) !default;
 // FORMS
 //
 $input-border-color: $color-grey !default;
+$input-border-color-dark: $body-bg !default;
 $button-border-color: transparent !default;
 $input-border-width: $border-width !default;
 $button-border-width: $border-width !default;

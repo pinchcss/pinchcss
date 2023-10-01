@@ -1,6 +1,6 @@
-$sm: 30em; //480px
-$md: 48em; //768px
-$lg: 64em; //1024px
+$sm: 30em !default; //480px
+$md: 48em !default; //768px
+$lg: 64em !default; //1024px
 
 @use 'include-media/dist/include-media' as include-media with (
 	$breakpoints: (
@@ -12,6 +12,7 @@ $lg: 64em; //1024px
 	$media-expressions: (
 		'screen': 'screen',
 		'print': 'print',
+		'dark': '(prefers-color-scheme: dark)',
 		'reduced-motion': '(prefers-reduced-motion: reduce)',
 		//https://www.w3.org/TR/mediaqueries-4/#pointer
 		'touch': '(pointer: coarse)',

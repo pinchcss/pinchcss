@@ -41,23 +41,25 @@
 		}
 
 		&.primary {
-			--background: var(--p-primary);
+			--background: var(--#{$prefix}-primary);
 		}
 
 		&.info {
-			--background: var(--p-info);
+			--background: var(--#{$prefix}-info);
+			--color: var(--#{$prefix}-info-color, var(--#{$prefix}-button-color));
+			--color-contrast: var(--#{$prefix}-info-color);
 		}
 
 		&.success {
-			--background: var(--p-success);
+			--background: var(--#{$prefix}-success);
 		}
 
 		&.warning {
-			--background: var(--p-warning);
+			--background: var(--#{$prefix}-warning);
 		}
 
 		&.danger {
-			--background: var(--p-danger);
+			--background: var(--#{$prefix}-danger);
 		}
 
 		&.outlined {
@@ -67,31 +69,7 @@
 			&:hover {
 				&:not([disabled]) {
 					background: var(--background);
-					color: var(--#{$prefix}-button-color);
-				}
-			}
-			&[disabled] {
-				background: transparent;
-			}
-		}
-
-		&.inverted {
-			--color: #{$body-color};
-			--background: #{$body-bg};
-			&:hover {
-				&:not([disabled]) {
-					background: darken($body-bg, 15%);
-				}
-			}
-			&.outlined {
-				background: transparent;
-				color: var(--background);
-				border-color: var(--background);
-				&:hover {
-					&:not([disabled]) {
-						background: var(--background);
-						color: var(--color);
-					}
+					color: var(--color-contrast, var(--#{$prefix}-button-color));
 				}
 			}
 		}
@@ -115,9 +93,5 @@ button:not([role='link']),
 	:where(&) {
 		display: inline-block;
 		text-decoration: none;
-	}
-
-	:where(&:not(.outlined, .inverted)) {
-		color: var(--#{$prefix}-button-color);
 	}
 }

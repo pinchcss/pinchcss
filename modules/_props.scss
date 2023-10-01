@@ -1,12 +1,11 @@
 @use 'sass:meta';
+@use 'sass:color';
 @use 'variables' as *;
 
-:root {
-	// body
+:where(:root) {
+	// fonts
 	--#{$prefix}-font-family: #{meta.inspect($font-family-base)};
 	--#{$prefix}-line-height: #{$line-height-base};
-	--#{$prefix}-color: #{$body-color};
-	--#{$prefix}-bg: #{$body-bg};
 
 	// forms
 	--#{$prefix}-input-border-color: #{$input-border-color};
@@ -28,4 +27,16 @@
 	--#{$prefix}-danger: #{$danger};
 	--#{$prefix}-link-color: #{$link-color};
 	--#{$prefix}-link-hover-color: #{$link-hover-color};
+
+	// theme
+	color: var(--#{$prefix}-color);
+	background: var(--#{$prefix}-bg);
+	&,
+	[data-theme='light'] {
+		--#{$prefix}-color: #{$body-color};
+		--#{$prefix}-color-rgb: #{color.red($body-color)}, #{color.green($body-color)}, #{color.blue($body-color)};
+		--#{$prefix}-bg: #{$body-bg};
+		--#{$prefix}-info: #{$info};
+		--#{$prefix}-info-color: #{$button-color};
+	}
 }

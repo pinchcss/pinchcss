@@ -1,0 +1,30 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'breakpoints' as bp;
+
+@mixin dark() {
+	@include bp.media('dark') {
+		:where(:root:not([data-theme='light'])) {
+			@content;
+		}
+	}
+	@at-root [data-theme='dark'] {
+		@content;
+	}
+}
+
+@include dark {
+	--#{$prefix}-color: #{$body-bg};
+	--#{$prefix}-color-rgb: #{color.red($body-bg)}, #{color.green($body-bg)}, #{color.blue($body-bg)};
+	--#{$prefix}-bg: #{$body-bg-dark};
+	--#{$prefix}-input-border-color: #{$input-border-color-dark};
+	--#{$prefix}-info: #{$body-bg};
+	--#{$prefix}-info-color: #{$dark};
+
+	--select-bg: initial;
+}
+
+:where([data-theme]) {
+	color: var(--#{$prefix}-color);
+	background: var(--#{$prefix}-bg);
+}
