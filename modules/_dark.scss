@@ -14,17 +14,17 @@
 }
 
 @include dark {
-	--#{$prefix}-color: #{$body-bg};
-	--#{$prefix}-color-rgb: #{color.red($body-bg)}, #{color.green($body-bg)}, #{color.blue($body-bg)};
-	--#{$prefix}-bg: #{$body-bg-dark};
-	--#{$prefix}-input-border-color: #{$input-border-color-dark};
-	--#{$prefix}-info: #{$body-bg};
-	--#{$prefix}-info-color: #{$dark};
+	--#{$prefix}color: #{$body-bg};
+	--#{$prefix}color-rgb: #{color.red($body-bg)}, #{color.green($body-bg)}, #{color.blue($body-bg)};
+	--#{$prefix}bg: #{$body-bg-dark};
+	--#{$prefix}input-border-color: #{$input-border-color-dark};
+	--#{$prefix}info: #{$body-bg};
+	--#{$prefix}info-color: #{$dark};
 
 	--select-bg: initial;
 }
 
 :where([data-theme]) {
-	color: var(--#{$prefix}-color);
-	background: var(--#{$prefix}-bg);
+	color: var(--#{$prefix}color);
+	background: var(--#{$prefix}bg);
 }

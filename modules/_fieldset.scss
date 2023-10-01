@@ -58,12 +58,12 @@
 	font-weight: 600;
 	width: auto;
 	font-size: 1.2em;
-	color: var(--#{$prefix}-input-border-color);
+	color: var(--#{$prefix}input-border-color);
 }
 
 :where(fieldset) {
-	border: var(--#{$prefix}-input-border-width) var(--#{$prefix}-input-border-color) solid;
-	border-radius: var(--#{$prefix}-input-border-radius);
+	border: var(--#{$prefix}input-border-width) var(--#{$prefix}input-border-color) solid;
+	border-radius: var(--#{$prefix}input-border-radius);
 	padding: $gap * 0.46 $gap $gap;
 	margin: 0 0 $gap;
 }
