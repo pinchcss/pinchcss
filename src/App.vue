@@ -40,14 +40,6 @@ nav {
 	@extend %field;
 }
 
-.box {
-	@extend %box;
-	&.inverted {
-		background: $body-color;
-		color: $body-bg;
-	}
-}
-
 .grid {
 	@extend %grid-md;
 }

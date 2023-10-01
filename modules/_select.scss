@@ -2,8 +2,9 @@
 @use 'functions' as *;
 
 select {
+	@extend %input;
+
 	:where(&) {
-		@extend %input;
 		height: 2.5em;
 		appearance: none;
 
@@ -12,14 +13,20 @@ select {
 		}
 
 		$w: 24;
-		$fill: $input-border-color;
-		$icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$w} #{$w}" fill="#{$fill}"><path d="#{$mdi-unfold-more-horizontal}" /></svg>';
+
+		$icon-light: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$w} #{$w}" fill="#{$input-border-color}"><path d="#{$mdi-unfold-more-horizontal}" /></svg>';
+		$icon-dark: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$w} #{$w}" fill="#{$input-border-color-dark}"><path d="#{$mdi-unfold-more-horizontal}" /></svg>';
+
+		@at-root :where(:root) {
+			--select-bg: url('data:image/svg+xml;utf8,#{svg-replace($icon-light)}');
+			--select-bg-dark: url('data:image/svg+xml;utf8,#{svg-replace($icon-dark)}');
+		}
 
 		padding-right: em($w);
-		background: url('data:image/svg+xml;utf8,#{svg-replace($icon)}') no-repeat right center / em($w);
+		background: var(--select-bg, var(--select-bg-dark)) no-repeat right center / em($w);
 	}
 
 	:where(&.placeholder) {
-		color: rgba($body-color, 0.5);
+		color: rgba(var(--#{$prefix}-color-rgb), 0.5);
 	}
 }

@@ -121,13 +121,13 @@
 
 	/* slider track */
 	&::-webkit-slider-runnable-track {
-		background-color: $input-border-color;
+		background-color: var(--#{$prefix}-input-border-color);
 		border-radius: $border-radius;
 		height: 0.2em;
 	}
 
 	&::-moz-range-track {
-		background-color: $input-border-color;
+		background-color: var(--#{$prefix}-input-border-color);
 		border-radius: $border-radius;
 		height: 0.2em;
 	}

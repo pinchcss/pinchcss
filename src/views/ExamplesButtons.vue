@@ -50,13 +50,21 @@ const colors = {
 			</template>
 		</p>
 
-		<p class="box inverted">
-			<button class="inverted">Inverted</button>{{ '&#32;' }}
-			<button class="inverted outlined">Outlined</button>{{ '&#32;' }}
-			<a @click.prevent class="inverted" role="button" href="#">Inverted</a>{{ '&#32;' }}
-			<a @click.prevent class="inverted outlined" role="button" href="#">Outlined</a>{{ '&#32;' }}
-			<button class="inverted" disabled>Inverted</button>{{ '&#32;' }}
-			<a class="inverted outlined" role="button" href="#" tabindex="-1" disabled>Outlined</a>{{ '&#32;' }}
+		<p data-theme="dark">
+			<button class="info">Inverted</button>{{ '&#32;' }}
+			<button class="info outlined">Outlined</button>{{ '&#32;' }}
+			<a @click.prevent class="info" role="button" href="#">Inverted</a>{{ '&#32;' }}
+			<a @click.prevent class="info outlined" role="button" href="#">Outlined</a>{{ '&#32;' }}
+			<button class="info" disabled>Inverted</button>{{ '&#32;' }}
+			<a class="info outlined" role="button" href="#" tabindex="-1" disabled>Outlined</a>{{ '&#32;' }}
+		</p>
+		<p data-theme="light">
+			<button class="info">Inverted</button>{{ '&#32;' }}
+			<button class="info outlined">Outlined</button>{{ '&#32;' }}
+			<a @click.prevent class="info" role="button" href="#">Inverted</a>{{ '&#32;' }}
+			<a @click.prevent class="info outlined" role="button" href="#">Outlined</a>{{ '&#32;' }}
+			<button class="info" disabled>Inverted</button>{{ '&#32;' }}
+			<a class="info outlined" role="button" href="#" tabindex="-1" disabled>Outlined</a>{{ '&#32;' }}
 		</p>
 
 		<p>
@@ -76,3 +84,12 @@ const colors = {
 		</p>
 	</section>
 </template>
+
+<style lang="scss" scoped>
+
+p {
+	@extend %box;
+	@extend %container-invert;
+	padding-block: 1em;
+}
+</style>
