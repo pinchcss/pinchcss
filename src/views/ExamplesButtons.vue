@@ -51,20 +51,26 @@ const colors = {
 		</p>
 
 		<p data-theme="dark">
-			<button class="info">Inverted</button>{{ '&#32;' }}
-			<button class="info outlined">Outlined</button>{{ '&#32;' }}
+			<button class="info">Inverted</button>
+			{{ '&#32;' }}
+			<button class="info outlined">Outlined</button>
+			{{ '&#32;' }}
 			<a @click.prevent class="info" role="button" href="#">Inverted</a>{{ '&#32;' }}
 			<a @click.prevent class="info outlined" role="button" href="#">Outlined</a>{{ '&#32;' }}
-			<button class="info" disabled>Inverted</button>{{ '&#32;' }}
-			<a class="info outlined" role="button" href="#" tabindex="-1" disabled>Outlined</a>{{ '&#32;' }}
+			<button class="info" disabled aria-disabled="true">Inverted</button>{{ '&#32;' }}
+			<a class="info outlined" role="button" tabindex="-1" disabled aria-disabled="true" href="#">Outlined</a>
+			{{ '&#32;' }}
 		</p>
 		<p data-theme="light">
-			<button class="info">Inverted</button>{{ '&#32;' }}
-			<button class="info outlined">Outlined</button>{{ '&#32;' }}
+			<button class="info">Inverted</button>
+			{{ '&#32;' }}
+			<button class="info outlined">Outlined</button>
+			{{ '&#32;' }}
 			<a @click.prevent class="info" role="button" href="#">Inverted</a>{{ '&#32;' }}
 			<a @click.prevent class="info outlined" role="button" href="#">Outlined</a>{{ '&#32;' }}
 			<button class="info" disabled>Inverted</button>{{ '&#32;' }}
-			<a class="info outlined" role="button" href="#" tabindex="-1" disabled>Outlined</a>{{ '&#32;' }}
+			<a class="info outlined" role="button" tabindex="-1" disabled aria-disabled="true" href="#">Outlined</a>
+			{{ '&#32;' }}
 		</p>
 
 		<p>
@@ -74,6 +80,7 @@ const colors = {
 					role="button"
 					@click.prevent
 					:disabled="(i + 1) % 3 === 0 ? '' : null"
+					:aria-disabled="(i + 1) % 3 === 0 ? true : false"
 					:tabindex="(i + 1) % 3 === 0 ? '-1' : '0'"
 					:class="[key === 'default' ? '' : key, i % 2 !== 0 ? 'outlined' : '']"
 				>
@@ -86,7 +93,6 @@ const colors = {
 </template>
 
 <style lang="scss" scoped>
-
 p {
 	@extend %box;
 	@extend %container-invert;

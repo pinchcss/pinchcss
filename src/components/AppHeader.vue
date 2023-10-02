@@ -2,7 +2,7 @@
 function toggleTheme() {
 	const data = document.documentElement.dataset;
 	const theme = data.theme;
-	if(theme) {
+	if (theme) {
 		data.theme = data.theme === 'dark' ? 'light' : 'dark';
 	} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 		data.theme = 'light';
