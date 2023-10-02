@@ -27,7 +27,7 @@
 		"test:e2e": "playwright test",
 		"test:e2e:ui": "playwright test --ui",
 		"lint": "eslint . --ext .vue,.js,.cjs,.mjs --fix --ignore-path .gitignore",
-		"format": "prettier --write modules/ build/ *.cjs *.js *.scss",
+		"format": "prettier --write modules/ build/ src/ *.cjs *.js *.scss",
 		"postversion": "git push && git push --tags"
 	},
 	"dependencies": {
