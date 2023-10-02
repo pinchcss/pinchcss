@@ -11,25 +11,45 @@ const config = {
 	projects: [
 		/* Test against desktop browsers */
 		{
-			name: 'chromium',
+			name: 'chrome',
 			use: { ...devices['Desktop Chrome'] },
+		},
+		{
+			name: 'chrome dark',
+			use: { ...devices['Desktop Chrome'], colorScheme: 'dark' },
 		},
 		{
 			name: 'firefox',
 			use: { ...devices['Desktop Firefox'] },
 		},
 		{
-			name: 'webkit',
+			name: 'firefox dark',
+			use: { ...devices['Desktop Firefox'], colorScheme: 'dark' },
+		},
+		{
+			name: 'safari',
 			use: { ...devices['Desktop Safari'] },
+		},
+		{
+			name: 'safari dark',
+			use: { ...devices['Desktop Safari'], colorScheme: 'dark' },
 		},
 		/* Test against mobile viewports. */
 		{
-			name: 'Mobile Chrome',
+			name: 'mobile chrome',
 			use: { ...devices['Pixel 5'] },
 		},
 		{
-			name: 'Mobile Safari',
+			name: 'mobile chrome dark',
+			use: { ...devices['Pixel 5'], colorScheme: 'dark' },
+		},
+		{
+			name: 'mobile safari',
 			use: { ...devices['iPhone 12'] },
+		},
+		{
+			name: 'mobile safari dark',
+			use: { ...devices['iPhone 12'], colorScheme: 'dark' },
 		},
 		/* Test against branded browsers. */
 		// {
