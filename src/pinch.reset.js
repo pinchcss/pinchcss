@@ -1,1 +1,0 @@
-import '../pinch.reset.scss';

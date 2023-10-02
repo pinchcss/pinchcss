@@ -1,27 +1,13 @@
 @use '../variables' with (
-	// cararra
-	$light-shades: rgb(243, 242, 239),
-	// polo blue
-	$light-accent: rgb(151, 184, 208),
-	// horizon
-	// $brand-main-hex: #58809e,
-	$brand-main: rgb(69, 106, 157),
-	// bali hai
-	$dark-accent: rgb(137, 158, 176),
-	// cloud burst
-	// $dark-shades-hex: #1c2748,
-	$dark-shades: rgb(28, 39, 72),
-	// $dark-hex: #0f1422,
-	$dark: rgb(15, 20, 34),
-	// fruit salad
-	// $color-green-hex: #50a167,
-	$color-green: rgb(62, 126, 80),
-	// brandy punch
-	// $color-yellow-hex: #cd912f,
-	$color-yellow: rgb(121, 85, 27),
-	// pomegranate
-	// $color-red-hex: #f44336,
-	$color-red: rgb(233, 27, 12),
-	$default: rgb(137, 158, 176),
-	$body-bg-dark: rgb(57, 64, 86),
+	$light-shades: #f3f2ef,
+	$light-accent: #97b8d0,
+	$brand-main: #456a9d,
+	$dark-accent: #899eb0,
+	$dark-shades: #1c2748,
+	$dark: #0f1422,
+	$green: #3e7e50,
+	$yellow: #79551b,
+	$red: #e91b0c,
+	$default: #899eb0,
+	$body-bg-dark: #394056
 );

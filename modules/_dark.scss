@@ -4,7 +4,7 @@
 
 @mixin dark() {
 	@include bp.media('dark') {
-		:where(:root:not([data-theme])) {
+		:root:not([data-theme]) {
 			@content;
 		}
 	}
