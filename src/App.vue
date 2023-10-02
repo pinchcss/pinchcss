@@ -16,7 +16,6 @@ import AppHeader from '@/components/AppHeader.vue';
 </template>
 
 <style lang="scss">
-
 #app {
 	@extend %container;
 }
@@ -33,6 +32,9 @@ nav {
 	.router-link-active {
 		font-weight: bold;
 		text-decoration: none;
+		cursor: default;
+		user-select: none;
+		pointer-events: none;
 	}
 }
 
@@ -47,7 +49,6 @@ nav {
 .col {
 	@extend %col;
 }
-
 </style>
 
 <!--
