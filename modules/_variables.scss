@@ -75,8 +75,10 @@ $body-bg: $light-shades !default;
 $body-bg-dark: $dark !default;
 
 $link-color: $brand-main !default;
+$link-color-dark: $light-accent !default;
 $link-decoration: underline !default;
 $link-hover-color: lighten($brand-main, 15%) !default;
+$link-hover-color-dark: darken($light-accent, 15%) !default;
 $link-hover-decoration: none !default;
 
 $gap: 1em !default;
