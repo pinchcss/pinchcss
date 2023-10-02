@@ -1,27 +1,12 @@
 @use '../variables' with (
-	// athens gray
-	$light-shades: rgb(228, 233, 236),
-	// bali hai
-	$light-accent: rgb(126, 158, 181),
-	// san marino
-	// $brand-main-hex: #456a9d,
-	$brand-main: rgb(69, 106, 157),
-	// storm gray
-	$dark-accent: rgb(107, 113, 133),
-	// mirage
-	// $dark-shades-hex: #1a1d2c,
-	$dark-shades: rgb(26, 29, 44),
-	// $dark-hex: #07080c,
-	$dark: rgb(7, 8, 12),
-	// fruit salad
-	// $color-green-hex: #4a9a67,
-	$color-green: rgb(74, 154, 103),
-	// brandy punch
-	// $color-yellow-hex: #c78a2f,
-	$color-yellow: rgb(199, 138, 47),
-	// pomegranate
-	// $color-red-hex: #f44336,
-	$color-red: rgb(244, 67, 54),
-	$color-grey: rgb(7, 8, 12),
-	$body-bg-dark: rgb(26, 29, 44)
+	$light-shades: #e4e9ec,
+	$light-accent: #7e9eb5,
+	$brand-main: #456a9d,
+	$dark-accent: #6b7185,
+	$dark-shades: #1a1d2c,
+	$dark: #07080c,
+	$green: #4a9a67,
+	$yellow: #c78a2f,
+	$red: #f44336,
+	$body-bg-dark: #1a1d2c
 );

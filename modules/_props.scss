@@ -2,7 +2,7 @@
 @use 'sass:color';
 @use 'variables' as *;
 
-:where(:root) {
+:root {
 	// fonts
 	--#{$prefix}font-family: #{meta.inspect($font-family-base)};
 	--#{$prefix}line-height: #{$line-height-base};
@@ -27,10 +27,8 @@
 	--#{$prefix}danger: #{$danger};
 
 	// theme
-	color: var(--#{$prefix}color);
-	background: var(--#{$prefix}bg);
-	&,
-	[data-theme='light'] {
+	@at-root &,
+		[data-theme='light'] {
 		--#{$prefix}color: #{$body-color};
 		--#{$prefix}color-rgb: #{color.red($body-color)}, #{color.green($body-color)}, #{color.blue($body-color)};
 		--#{$prefix}bg: #{$body-bg};
