@@ -366,6 +366,8 @@
   }
 }
 :where(:root) {
+  color: var(--color);
+  background: var(--bg);
   font-family: var(--font-family);
   line-height: var(--line-height);
 }
@@ -553,7 +555,7 @@
   display: none;
 }
 :where(:root) {
-  --select-bg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23313439'><path d='M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z' /></svg>");
+  --select-bg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d0d0e'><path d='M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z' /></svg>");
   --select-bg-dark: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23faf9f9'><path d='M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z' /></svg>");
 }
 
@@ -593,7 +595,7 @@
 [type=button i],
 [type=reset i],
 [type=submit i]):hover {
-  box-shadow: inset 0 0 0 9em rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 0 5em rgba(153, 153, 153, 0.8);
 }
 :where([role=button], button:not([role=link]),
 [type=button i],
@@ -663,10 +665,10 @@
   text-decoration: none;
 }
 
-:where(:root) {
+:root {
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --line-height: 1.5;
-  --input-border-color: #313439;
+  --input-border-color: #0d0d0e;
   --button-border-color: transparent;
   --input-border-width: 0.125em;
   --button-border-width: 0.125em;
@@ -681,28 +683,28 @@
   --success: #40a276;
   --warning: #be923e;
   --danger: #f44336;
-  --link-color: #2585ce;
-  --link-hover-color: #5ea9e2;
-  color: var(--color);
-  background: var(--bg);
 }
-:where(:root),
-:where(:root) [data-theme=light] {
+:root,
+[data-theme=light] {
   --color: #0d0d0e;
   --color-rgb: 13, 13, 14;
   --bg: #faf9f9;
   --info: #162a6a;
   --info-color: #fff;
+  --link-color: #2585ce;
+  --link-hover-color: #5ea9e2;
 }
 
 @media (prefers-color-scheme: dark) {
-  :where(:root:not([data-theme=light])) {
+  :root:not([data-theme]) {
     --color: #faf9f9;
     --color-rgb: 250, 249, 249;
     --bg: #0d0d0e;
     --input-border-color: #faf9f9;
     --info: #faf9f9;
     --info-color: #0d0d0e;
+    --link-color: #67accb;
+    --link-hover-color: #3b88ab;
     --select-bg: initial;
   }
 }
@@ -713,6 +715,8 @@
   --input-border-color: #faf9f9;
   --info: #faf9f9;
   --info-color: #0d0d0e;
+  --link-color: #67accb;
+  --link-hover-color: #3b88ab;
   --select-bg: initial;
 }
 

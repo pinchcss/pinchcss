@@ -33,22 +33,7 @@ $paragraph-margin-bottom: 1rem !default;
 //
 
 //generated on http://colormind.io/bootstrap/
-// $theme-colors: (
-// 	'light-shades': #faf9f9,
-// 	'light-accent': #67accb,
-// 	'warning': #ffc107,
-// 	'brand-main': #2585ce,
-// 	'dark-accent': #2665a0,
-// 	'dark-shades': #162a6a,
-// 	'dark': #0d0d0e,
-// 	'color-green': #40a276,
-// 	'color-yellow': #be923e,
-// 	'color-red': #f44336,
-// 	'color-grey': #313439,
-// 	'color-white': #fff,
-// 	'default': #676b72,
-// ) !default;
-
+$light: #fff !default;
 $light-shades: #faf9f9 !default;
 $light-accent: #67accb !default;
 $brand-main: #2585ce !default;
@@ -56,19 +41,16 @@ $dark-accent: #2665a0 !default;
 $dark-shades: #162a6a !default;
 $dark: #0d0d0e !default;
 
-$color-green: #40a276 !default;
-$color-yellow: #be923e !default;
-$color-red: #f44336 !default;
-
-$color-grey: #313439 !default;
-$color-white: #fff !default;
+$green: #40a276 !default;
+$yellow: #be923e !default;
+$red: #f44336 !default;
 
 $default: #676b72 !default;
 $primary: $brand-main !default;
 $info: $dark-shades !default;
-$success: $color-green !default;
-$warning: $color-yellow !default;
-$danger: $color-red !default;
+$success: $green !default;
+$warning: $yellow !default;
+$danger: $red !default;
 
 $body-color: $dark !default;
 $body-bg: $light-shades !default;
@@ -90,7 +72,7 @@ $border-radius: em(6) !default;
 //
 // FORMS
 //
-$input-border-color: $color-grey !default;
+$input-border-color: $dark !default;
 $input-border-color-dark: $body-bg !default;
 $button-border-color: transparent !default;
 $input-border-width: $border-width !default;
@@ -99,7 +81,7 @@ $input-border-radius: $border-radius !default;
 $button-border-radius: $border-radius !default;
 $input-padding: em(6) em(12) !default; //0.375em 0.75em
 $button-padding: em(6) em(24) !default; //0.375em 1.5em
-$button-color: $color-white;
+$button-color: $light;
 $label-margin-bottom: em(4) !default;
 $input-margin-bottom: em(8) !default;
 

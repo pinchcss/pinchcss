@@ -1,6 +1,8 @@
 @use './variables' as *;
 
 :where(:root) {
+	color: var(--#{$prefix}color);
+	background: var(--#{$prefix}bg);
 	font-family: var(--#{$prefix}font-family);
 	line-height: var(--#{$prefix}line-height);
 }
