@@ -4,7 +4,7 @@
 
 @mixin dark() {
 	@include bp.media('dark') {
-		:where(:root:not([data-theme='light'])) {
+		:where(:root:not([data-theme])) {
 			@content;
 		}
 	}
@@ -20,6 +20,8 @@
 	--#{$prefix}input-border-color: #{$input-border-color-dark};
 	--#{$prefix}info: #{$body-bg};
 	--#{$prefix}info-color: #{$dark};
+	--#{$prefix}link-color: #{$link-color-dark};
+	--#{$prefix}link-hover-color: #{$link-hover-color-dark};
 
 	--select-bg: initial;
 }
